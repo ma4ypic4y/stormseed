@@ -1,0 +1,13 @@
+import { readFile } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import { derive, parseSnapshot, ALGORITHM } from '../public/core.js';
+const file=process.argv[2];if(!file)throw new Error('Usage: node scripts/verify_receipt.mjs receipt.json');
+const receipt=JSON.parse(await readFile(file,'utf8'));
+assert.equal(receipt.algorithm,ALGORITHM);
+const snapshot=await parseSnapshot(receipt.snapshot);
+assert.equal(snapshot.seed,receipt.seed);
+const result=await derive(receipt.seed,receipt.nonce,receipt.config.min,receipt.config.max);
+assert.deepEqual(result,receipt.outcome);
+const display=receipt.mode==='coin'?(result.value===0?'Heads':'Tails'):receipt.mode==='choice'?receipt.config.choices[result.value]:String(result.value);
+assert.equal(display,receipt.displayValue);
+console.log(`Reproduced result: ${display}. Snapshot checksum matches. This does not prove source authenticity or absence of rerolls.`);

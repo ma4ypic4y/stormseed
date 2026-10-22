@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { derive, sha256, mapWord, parseSnapshot, validateRange, parseChoices, dataAge } from '../public/core.js';
+const seed='a'.repeat(64), nonce='b'.repeat(64);
+test('SHA-256 reference vector',async()=>assert.equal(await sha256('abc'),'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad'));
+test('reproducible draw, fresh nonce changes stream',async()=>{const a=await derive(seed,nonce,1,100);assert.deepEqual(a,await derive(seed,nonce,1,100));assert.notEqual(a.digest,(await derive(seed,'c'.repeat(64),1,100)).digest);});
+test('rejection discards only unequal remainder, including boundary',()=>{assert.equal(mapWord(4294967291,6),5);assert.equal(mapWord(4294967292,6),null);assert.equal(mapWord(4294967295,6),null);assert.equal(mapWord(4294967295,2),1);assert.equal(mapWord(0,6),0);});
+test('all accepted 8-bit analogue residues have equal counts',()=>{for(const span of [3,6,7,100]){const limit=Math.floor(256/span)*span;const counts=Array(span).fill(0);for(let i=0;i<limit;i++)counts[mapWord(i,span)]++;assert.equal(new Set(counts).size,1);}});
+test('inclusive negative, singleton and maximum supported ranges',async()=>{assert.equal((await derive(seed,nonce,-4,-4)).value,-4);for(let i=0;i<50;i++){const r=await derive(seed,await sha256(String(i)),-999999999,999999999);assert.ok(r.value>=-999999999&&r.value<=999999999&&Number.isInteger(r.value));}});
+test('bad range and input fail, never silently coerce',async()=>{for(const pair of [[10,1],[1.5,2],[NaN,1],[0,Infinity],[-1000000000,1]])assert.throws(()=>validateRange(...pair));await assert.rejects(derive('bad',nonce,1,10));});
+test('choice parsing preserves duplicate weighting and rejects short or excessive lists',()=>{assert.deepEqual(parseChoices(' A\n\nB\nA '),['A','B','A']);assert.throws(()=>parseChoices('A'));assert.throws(()=>parseChoices('x\n'.repeat(201)));assert.throws(()=>parseChoices('x'.repeat(101)+'\ny'));});
+test('real snapshot validates, mutation is detected',async()=>{const wrapper=JSON.parse(await readFile('public/data/lightning.json','utf8'));const data=await parseSnapshot(wrapper);assert.ok(data.flashes.length>0);assert.ok(data.sources.every(s=>s.sha256.length===64));await assert.rejects(parseSnapshot({...wrapper,material:wrapper.material+' '}));});
+test('age reporting makes stale and future observations explicit',()=>{const now=Date.parse('2026-10-22T12:00:00Z');assert.equal(dataAge('2026-10-22T11:30:00Z',now).stale,false);assert.equal(dataAge('2026-10-21T12:00:00Z',now).stale,true);assert.equal(dataAge('2026-10-23T12:00:00Z',now).stale,true);});

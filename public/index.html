@@ -2,51 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#07171d">
+  <meta name="theme-color" content="#f3f3ef">
   <title>Stormseed — Let lightning decide.</title>
-  <meta name="description" content="A random picker seeded by real lightning. Pick a number, flip a coin, roll a die, or let the storm choose. Open data. A little natural chaos.">
+  <meta name="description" content="A number from 1 to 100. A roll of the die. Randomness seeded by real lightning, for life's little decisions.">
   <link rel="canonical" href="https://ma4ypic4y.github.io/stormseed/">
-  <meta property="og:title" content="Stormseed — Let lightning decide."><meta property="og:description" content="Small decisions. Real lightning. A beautiful random picker seeded by the sky."><meta property="og:type" content="website"><meta property="og:url" content="https://ma4ypic4y.github.io/stormseed/"><meta property="og:image" content="https://ma4ypic4y.github.io/stormseed/assets/social.png">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@mbor1sov"><meta name="twitter:title" content="Stormseed — Let lightning decide."><meta name="twitter:description" content="A random picker seeded by real lightning."><meta name="twitter:image" content="https://ma4ypic4y.github.io/stormseed/assets/social.png">
+  <meta property="og:title" content="Stormseed — Let lightning decide."><meta property="og:description" content="Small decisions. Real lightning. Pick a number or roll the die."><meta property="og:type" content="website"><meta property="og:url" content="https://ma4ypic4y.github.io/stormseed/"><meta property="og:image" content="https://ma4ypic4y.github.io/stormseed/assets/social.png">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@mbor1sov"><meta name="twitter:title" content="Stormseed — Let lightning decide."><meta name="twitter:description" content="A random number, seeded by real lightning."><meta name="twitter:image" content="https://ma4ypic4y.github.io/stormseed/assets/social.png">
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="./assets/space-grotesk.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="./style.css"><script type="module" src="./app.js"></script>
+  <link rel="preload" href="./assets/basteleur-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/apfel-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./style.css?v=chance-print"><script type="module" src="./app.js?v=chance-print"></script>
 </head>
 <body>
-<canvas id="living-sky" class="living-sky" aria-hidden="true"></canvas>
-<a href="#generator" class="skip-link">Skip to generator</a>
+<a href="#generate" class="skip-link">Skip to generator</a>
 <main>
 <section class="stage" aria-labelledby="headline">
-  <a href="#how-it-works" id="method-link" class="method-link">How it works <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10h10M10 5l5 5-5 5"/></svg></a>
+  <div class="masthead"><a class="brand" href="./" aria-label="Stormseed home">stormseed<span aria-hidden="true">.</span></a><button type="button" id="method-link" class="method-link" aria-expanded="false" aria-controls="how-it-works">How it works <span class="plus" aria-hidden="true"></span></button></div>
   <div class="instrument" id="generator">
-    <h1 id="headline">Let lightning decide.</h1>
-    <p class="intro">A random picker, seeded by real lightning.</p>
-    <div class="picker">
-      <div class="modes" role="tablist" aria-label="What to pick">
-        <button type="button" role="tab" id="tab-number" aria-selected="true" aria-controls="panel-number" data-mode="number"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 3-2 14M14 3l-2 14M3 7h14M2 13h14"/></svg><span>Number</span></button>
-        <button type="button" role="tab" id="tab-coin" aria-selected="false" aria-controls="panel-coin" tabindex="-1" data-mode="coin"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 6v8M8 7h3a2 2 0 0 1 0 4H9a2 2 0 0 1 0-4"/></svg><span>Coin</span></button>
-        <button type="button" role="tab" id="tab-dice" aria-selected="false" aria-controls="panel-dice" tabindex="-1" data-mode="dice"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="3"/><path d="M7 7h.01M13 7h.01M10 10h.01M7 13h.01M13 13h.01" stroke-width="2.5"/></svg><span>Dice</span></button>
-        <button type="button" role="tab" id="tab-choice" aria-selected="false" aria-controls="panel-choice" tabindex="-1" data-mode="choice"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5h10M7 10h10M7 15h10M2 5h.01M2 10h.01M2 15h.01"/></svg><span>Choose</span></button>
+    <div class="result-area">
+      <div class="result-art" id="result-art">
+        <div id="result" class="result empty" aria-hidden="true">?</div>
+        <svg id="die" class="die" viewBox="0 0 300 300" aria-hidden="true" hidden><rect x="9" y="9" width="282" height="282" rx="40"/><g id="pips"></g></svg>
+        <svg class="discharge" viewBox="0 0 800 700" preserveAspectRatio="none" aria-hidden="true"><path id="discharge-path" pathLength="1"/></svg>
       </div>
-      <div class="result-stage" aria-live="polite" aria-atomic="true"><p class="result-label" id="result-label">A number from 1 to 100</p><div id="result" class="result empty">—</div></div>
-      <div class="settings">
-        <div id="panel-number" role="tabpanel" aria-labelledby="tab-number" class="range-fields"><label>From<input id="min" type="number" inputmode="numeric" value="1" min="-999999999" max="999999999" step="1"></label><span class="range-to" aria-hidden="true">—</span><label>To<input id="max" type="number" inputmode="numeric" value="100" min="-999999999" max="999999999" step="1"></label></div>
-        <div id="panel-coin" role="tabpanel" aria-labelledby="tab-coin" hidden><p class="setting-note">Two sides. One less thing to think about.</p></div>
-        <div id="panel-dice" role="tabpanel" aria-labelledby="tab-dice" hidden><label class="die-select">Sides<select id="sides"><option value="6">6 · classic</option><option value="4">4</option><option value="8">8</option><option value="10">10</option><option value="12">12</option><option value="20">20</option><option value="100">100</option></select></label></div>
-        <div id="panel-choice" role="tabpanel" aria-labelledby="tab-choice" hidden><label class="choice-label" for="choices">Your choices <span>One per line</span></label><textarea id="choices" rows="3" maxlength="20200" placeholder="Go for a walk&#10;Make something&#10;Call a friend"></textarea></div>
+      <p id="result-label" class="result-label" role="status" aria-live="polite">A little room for chance.</p>
+      <div class="actions-space"><div id="result-actions" class="result-actions" hidden><button type="button" id="copy-result">Copy</button><button type="button" id="save-card">Save card</button><button type="button" id="share">Share</button></div></div>
+    </div>
+    <div class="control-panel">
+      <div class="purpose"><h1 id="headline">Let lightning<br> decide.</h1><p>A random number,<br> seeded by real lightning.</p></div>
+      <div class="controls">
+        <div class="modes" role="group" aria-label="What to generate"><button type="button" aria-pressed="true" data-mode="number">1–100</button><button type="button" aria-pressed="false" data-mode="dice">Dice</button></div>
+        <button type="button" id="generate" class="generate" disabled><span id="generate-label">Connecting…</span><span class="action-disc" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7 25 25 7M7 7h18v18"/></svg></span></button>
+        <p id="error" class="error" role="alert" hidden></p>
+        <p class="action-status" id="action-status" role="status"></p>
       </div>
-      <p id="error" class="error" role="alert" hidden></p>
-      <button type="button" id="generate" class="generate" disabled><span id="generate-label" class="generate-label">Connecting to the sky…</span><span class="strike-key" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m14 2-9 12h7l-2 8 9-12h-7l2-8Z"/></svg></span></button>
-      <div class="actions-space"><div id="result-actions" class="result-actions" hidden><button type="button" id="copy-result"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M13 4V3H3v10h1"/></svg>Copy</button><button type="button" id="save-card">Save card <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8m-3-3 3 3 3-3M3 11v3h10v-3"/></svg></button><button type="button" id="share"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 13V2m-4 4 4-4 4 4M5 9H3v8h14V9h-2"/></svg>Share</button></div>
-      </div><p class="hybrid-note" id="hybrid-note">Lightning data + browser randomness.</p>
-      <p class="action-status" id="action-status" role="status"></p>
     </div>
   </div>
-  <div class="ambient-bottom">
-    <div class="brand-lockup"><a class="brand" href="./" aria-label="Stormseed home"><svg viewBox="0 0 24 28" aria-hidden="true"><path d="M15 2 5 15h8l-4 11L21 11h-8l2-9Z"/></svg>stormseed</a><span class="ascii-note">A living ASCII sky</span></div>
-    <div class="source-status"><div class="source-line"><span class="status-dot" id="status-dot"></span><button type="button" id="source-button" class="source-button">Reading the atmosphere…</button></div><p id="source-subtitle">Public satellite observations from NOAA</p><div class="source-meta"><span id="source-count">—</span><span>GOES LIGHTNING MAPPER</span></div></div>
-    <a class="creator" href="https://x.com/mbor1sov" target="_blank" rel="noopener noreferrer">by @mbor1sov ↗</a>
-  </div>
+  <div class="colophon"><button type="button" id="source-button" class="source-button">Reading lightning data…</button><span class="hybrid-note">Lightning data + browser randomness.</span><a class="creator" href="https://x.com/mbor1sov" target="_blank" rel="noopener noreferrer">by @mbor1sov <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 12 8-8M4 4h8v8"/></svg></a></div>
 </section>
 <div class="detail-shell">
     <section class="method-section" id="how-it-works" aria-labelledby="method-heading" hidden>
@@ -56,13 +48,14 @@
         <ol class="method-steps"><li><h3>Catch a little lightning.</h3><p>NOAA’s GOES satellites observe flashes over the Americas and nearby oceans. We fetch a small public snapshot roughly every 30 minutes.</p></li><li><h3>Mix in something private.</h3><p>We hash the observations with 32 fresh random bytes from your browser. The lightning is a real input; your browser keeps each new pick unpredictable.</p></li><li><h3>Give every option a fair chance.</h3><p>Rejection sampling avoids the bias that a simple remainder can introduce. Copy the answer, or keep a little piece of the storm.</p></li></ol>
         <details><summary>How random is it, really?</summary><p>Useful for everyday choices and games. It is a hybrid generator, not a certified lightning-only source. Storms cluster, satellite measurements have biases, and a public feed is no longer secret. A hash mixes inputs; it does not create entropy.</p><p>We have not measured a defensible number of entropy bits in the lightning feed. The unpredictability of each pick relies on your browser’s cryptographic random generator and SHA-256. Don’t use this site for passwords, money, or audited prize draws.</p></details>
         <details><summary>Is this live? Does it cover the whole planet?</summary><p>It is a recent snapshot, not a live stream. The observed age is always shown. GitHub’s scheduled refreshes may be delayed. If updates stop, we keep the last real snapshot and label it as older data.</p><p>GOES-19 and GOES-18 cover their views of the Western Hemisphere, not all of Earth. GLM detects optical flashes, including lightning inside clouds. These are not all confirmed ground strikes. Observations from the two satellites can overlap.</p></details>
-        <details><summary>Can I inspect my result?</summary><p>Yes. Download the receipt below to see the snapshot fingerprint, source file hashes, browser nonce, range and exact algorithm. With those inputs you can reproduce the number. A receipt does not prove that someone didn’t reroll.</p><button type="button" id="receipt" class="text-link" disabled>Download result receipt ↗</button><p id="receipt-note" class="small-note">Generate a result first. A receipt for “Choose” includes your list.</p></details>
+        <details><summary>Can I inspect my result?</summary><p>Yes. Download the receipt below to see the snapshot fingerprint, source file hashes, browser nonce, range and exact algorithm. With those inputs you can reproduce the number. A receipt does not prove that someone didn’t reroll.</p><button type="button" id="receipt" class="text-link" disabled>Download result receipt ↗</button><p id="receipt-note" class="small-note">Generate a result to download its receipt.</p></details>
         <details><summary>Has anyone done this before?</summary><p>Yes. <a href="https://api.random.org/features" target="_blank" rel="noopener noreferrer">RANDOM.ORG</a> uses atmospheric radio noise originating from lightning. Researchers have also used lightning radio signals to check the integrity of power-grid measurements.</p><p>Stormseed takes a different route: open satellite observations, browser randomness and a useful little interface. <a href="./research.html">Read the research and design rationale ↗</a></p></details>
         <div class="method-links"><a href="https://registry.opendata.aws/noaa-goes/" target="_blank" rel="noopener noreferrer">NOAA open data ↗</a><a href="https://github.com/ma4ypic4y/stormseed" target="_blank" rel="noopener noreferrer">View the code ↗</a></div>
-        <p class="small-note">Derived from NOAA data. No affiliation or endorsement. Your choices stay in your browser unless you copy, share or download them.</p>
+        <p class="small-note">Derived from NOAA data. No affiliation or endorsement. Your results stay in your browser unless you copy, share or download them.</p>
       </div>
     </section>
-    <section id="observation" class="observation" hidden aria-labelledby="observation-heading"><div><h2 id="observation-heading">A flash in your snapshot.</h2><p>One of the observations mixed into your result. The artwork is an interpretation.</p></div><dl id="flash-details"></dl><a id="raw-source" class="text-link" target="_blank" rel="noopener noreferrer">Open original NOAA file ↗</a></section>
-</div></main><footer class="site-footer"><span>Small decisions. Real lightning.</span><a href="https://github.com/ma4ypic4y/stormseed" target="_blank" rel="noopener noreferrer">Open source ↗</a></footer>
+    <section id="observation" class="observation" hidden aria-labelledby="observation-heading"><div><h2 id="observation-heading">A flash in your snapshot.</h2><p>One of the observations mixed into your result. The red discharge is an animation, not a recorded lightning path.</p></div><dl id="flash-details"></dl><a id="raw-source" class="text-link" target="_blank" rel="noopener noreferrer">Open original NOAA file ↗</a></section>
+</div>
+</main>
 <noscript><p class="noscript">Stormseed needs JavaScript to verify the lightning data and generate a result locally in your browser.</p></noscript>
 </body></html>

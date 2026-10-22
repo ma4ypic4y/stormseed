@@ -1,0 +1,18 @@
+{
+  "asset": "social.png",
+  "type": "code-rendered typography",
+  "created": "2026-10-22",
+  "description": "Original 1200 \u00d7 630 layout. No stock imagery or AI-generated raster. Question mark is an empty-state illustration, not a generated outcome.",
+  "fonts": [
+    {
+      "name": "Basteleur Bold",
+      "source": "https://gitlab.com/velvetyne/basteleur",
+      "license": "SIL OFL 1.1"
+    },
+    {
+      "name": "Apfel Grotezk Regular",
+      "source": "https://github.com/collletttivo/apfel-grotezk",
+      "license": "SIL OFL 1.1"
+    }
+  ]
+}

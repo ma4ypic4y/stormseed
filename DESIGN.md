@@ -1,6 +1,6 @@
 ---
 name: Stormseed
-description: A compact random picker inside a living ASCII sky.
+description: A responsive random picker inside a living ASCII sky.
 colors:
   bg: "#06141c"
   ink: "#eaf2ed"
@@ -11,51 +11,53 @@ colors:
   accent-hover: "#edffda"
 typography:
   headline:
-    fontFamily: "Manrope, sans-serif"
-    fontSize: "39px"
-    fontWeight: 500
-    lineHeight: 1.2
+    fontFamily: "Space Grotesk, sans-serif"
+    fontSize: "clamp(40px, 3.5vw, 76px)"
+    fontWeight: 400
+    lineHeight: 1.08
     letterSpacing: "-0.04em"
   result:
-    fontFamily: "Manrope, sans-serif"
-    fontSize: "116px"
+    fontFamily: "Space Grotesk, sans-serif"
+    fontSize: "clamp(128px, min(12vw, 19svh), 224px)"
     fontWeight: 400
-    lineHeight: 1.17
+    lineHeight: 1
     letterSpacing: "-0.04em"
   body:
-    fontFamily: "Manrope, sans-serif"
-    fontSize: "14px"
+    fontFamily: "Space Grotesk, sans-serif"
+    fontSize: "16px"
     fontWeight: 400
-    lineHeight: 1.7
+    lineHeight: 1.6
   label:
-    fontFamily: "Manrope, sans-serif"
-    fontSize: "12px"
+    fontFamily: "Space Grotesk, sans-serif"
+    fontSize: "clamp(14px, .95vw, 18px)"
     fontWeight: 400
   mono:
     fontFamily: "IBM Plex Mono, monospace"
-    fontSize: "13px"
+    fontSize: "clamp(14px, .95vw, 18px)"
     fontWeight: 400
 rounded:
-  field: "5px"
-  action: "30px"
+  field: "4px"
+  action: "4px"
+  tab: "3px"
+  tab-rail: "6px"
 components:
   button-primary:
     backgroundColor: "{colors.accent}"
     textColor: "#15251d"
     rounded: "{rounded.action}"
-    padding: "13px 20px"
+    padding: "0"
     width: "100%"
   button-primary-hover:
     backgroundColor: "{colors.accent-hover}"
   input-number:
     textColor: "{colors.ink}"
     typography: "{typography.mono}"
-    padding: "5px 0 6px"
-    width: "72px"
-    height: "36px"
+    padding: "12px 0"
+    width: "100%"
+    height: "52px"
   button-quiet:
     textColor: "{colors.muted}"
-    padding: "4px 2px"
+    padding: "8px 12px"
 ---
 
 # Design System: Stormseed
@@ -64,7 +66,7 @@ components:
 
 **Creative North Star: "A living ASCII sky"**
 
-A dark, atmospheric field of real rendered glyphs surrounds a clean, compact instrument. The sky supplies the expression; restrained controls keep the decision easy. These rules capture the finished implementation in `public/index.html`, `public/style.css`, and `public/live-sky.js`, following the approved direction in `.impeccable/review/contract.md`.
+A dark, atmospheric field of real rendered glyphs surrounds a clean, responsive instrument. The sky supplies the expression; restrained controls keep the decision easy. These rules capture the finished implementation in `public/index.html`, `public/style.css`, and `public/live-sky.js`, following the user-directed revisions in `.impeccable/review/contract.md`.
 
 **Key Characteristics:**
 - A full-screen, continuously shimmering ASCII scene.
@@ -78,7 +80,7 @@ The palette pairs deep blue atmosphere with cool, readable type and a pale green
 
 ### Primary
 
-- **Pale lightning green (`accent`)** marks the primary action, active-tab underline, focus outline, and current-source dot. Its lighter hover variant belongs to the primary button.
+- **Pale lightning green (`accent`)** marks the primary action, focus outline, and current-source dot. Its lighter hover variant belongs to the primary button.
 - The canvas adds teal haze and luminous cyan-to-pale-green glyphs through shader lighting, with the center deliberately darkened for reading.
 
 ### Neutral
@@ -92,39 +94,41 @@ The palette pairs deep blue atmosphere with cool, readable type and a pale green
 
 ## Typography
 
-Manrope serves the interface and large result. IBM Plex Mono distinguishes range values, tiny source metadata, and the ASCII glyph atlas. Both fonts are self-hosted and use `font-display: swap`.
+Space Grotesk serves the interface and large result. IBM Plex Mono distinguishes range values, tiny source metadata, and the ASCII glyph atlas. Both fonts are self-hosted and use `font-display: swap`. Space Grotesk is chosen for its open counters and distinctive angular numerals, including the large result; its popularity warning is intentionally accepted for this user-requested typographic replacement.
 
-The headline is modest beside the result. The intro is smaller (13px), mode labels are quiet (12px), and the result label is subordinate (10px). Numbers use tabular figures. Long results shrink (53px); list choices use a compact multiline treatment (32px) and may wrap anywhere. Preserve these content-sensitive variants rather than forcing all answers into the large numeral scale.
+The headline scales from 40 to 76px on desktop and 28 to 42px on narrow screens. The result is the focal point: 128–224px, constrained by both viewport width and height. Four-to-six-character answers use a container-relative size; longer numbers use at most 15cqw / 76px; choices wrap at 28–44px. All variants preserve the complete result. The large numeral is functional output, so it intentionally exceeds the ordinary display-type ceiling.
+
+Body text uses 16px with 1.6 line height. Primary controls use 16–20px, mode labels 14–18px, secondary actions 12–16px, and peripheral metadata 9–16px by role. Range fields use tabular monospace numerals. Mobile fields stay at least 16px to prevent input zoom. Only the ASCII renderer and actual data use monospace.
 
 ## Layout
 
-The homepage stage fills at least the small viewport height (`100svh`) and centers a tool with a maximum width of 410px. Its picker is narrower (340px). Desktop stage padding reserves space for the upper link and lower metadata (110px 28px 150px). The headline, intro, mode tabs, result, settings, generate button, and result actions form one vertical sequence.
+The full-height stage uses a two-row grid: the centered instrument and an in-flow footer. The tool can grow to 860px; its picker scales from 360 to 600px using `clamp(360px, 29vw, 600px)`. This replaces the former fixed 340px picker. Page edges scale from 24 to 88px. No CSS transform or zoom scales text.
 
-“How it works” sits at the upper right (42px from the side, 32px from the top). At the stage bottom, a three-column arrangement places the brand left, source information center, and creator right. A quiet footer follows the stage. Explanation and observation sections appear below only when opened; the explanation uses two columns within a 1040px shell.
+The viewport height constrains result size. At desktop heights below 850px, the result becomes 128px and gaps tighten while touch targets remain usable. The footer stays below the tool, so validation errors, long choices, larger text and short landscape screens extend the page instead of colliding with source details.
 
-At widths up to 700px, the instrument and picker narrow to 360px and 310px, the headline becomes 32px, and the result becomes 108px. Source information occupies its own row above the brand and creator; the ASCII caption disappears. Disclosed sections become one column. Up to 350px, side padding becomes 20px and the headline becomes 28px. At heights of at least 950px, desktop result space grows to 190px with a 132px numeral. CSS order lets mobile rules override those tall-screen values.
+Below 700px the picker uses available width up to 420px, source metadata gets its own row, and brand/creator share the row below. Below 360px optional mode icons are hidden while all four labels and functions remain. Explanations become one column. At wide desktop sizes the title, result, controls and footer all have independent bounded scales; ultrawide screens preserve centered composition without stretching controls edge to edge.
 
 ## Elevation & Depth
 
-Depth comes from the animated glyph field, haze, vignette, and central darkening. The instrument has no card background, border, or box shadow. A diffuse result text shadow (`0 2px 30px #06141c`) protects its silhouette. Supporting content uses thin rules and restrained translucent fields; keep structural surfaces quiet.
+Depth comes from the animated glyph field, haze, vignette, and central darkening. The instrument has no card background, border, or box shadow. A diffuse result text shadow (`0 3px 32px #06141c`) protects its silhouette. Supporting content uses thin rules and restrained translucent fields; keep structural surfaces quiet.
 
 ## Shapes
 
-The primary action is a broad pill. Number fields have square edges and a bottom rule; the select and textarea use the small field radius. The explanation's close control is circular. Icons are thin inline strokes, except the filled brand bolt. Dividers and selected-tab indicators are single-pixel lines.
+The primary action is a rectangular key with a 4px radius and a dark bolt cell at the right. Tabs share a 6px-radius rail; selected tabs have a clearly filled and outlined 3px-radius segment. Inputs and secondary controls use 4px radii. The explanatory close control remains circular. All icons are authored SVG in a consistent thin stroke.
 
 ## Components
 
 ### Buttons
 
-The primary action spans the picker, with a bolt at the left and a small directional arrow at the right. Its minimum height is 49px, or 48px on mobile. Hover lightens the fill and lifts it 1px; press lowers it 1px. These transitions last 200ms. Disabled buttons fade to 55% opacity. Copy, Save card, and Share are quiet text actions revealed after a result; reserved space prevents the tool from jumping when they appear.
+The primary action spans the picker and grows from 58 to 76px high. The label fills the pale-green section; the bolt occupies a square dark cell. Both parts form one semantic button and one click target. Hover lightens the fill and tilts the bolt, press moves the key down 2px, disabled state reduces opacity. Copy, Save card and Share have visible icons, 44px targets and a quiet bordered hover treatment. Their reserved row prevents generation from shifting the tool.
 
 ### Inputs / Fields
 
-Range inputs are centered monospace values over a thin underline. Labels stay visible. The dice select and choice textarea use dark surfaces and subtle outlines; the textarea may resize vertically within an 86–200px height. Validation is rendered as warm pale text in a `role="alert"` region.
+Range fields each fill one half of the picker, with visible labels and right-aligned values above a rule. Native number inputs are 52px high and preserve full-width editing. The select uses a dark surface; the textarea starts at 96px and can resize to 240px. Errors are warm pale text in an alert region. Long results adapt to the picker width rather than overflowing.
 
 ### Navigation
 
-Number, Coin, Dice, and Choose form a tablist with a single understated active underline. Selection updates the matching panel and roving tab stop. Left/Right arrows and Home/End move between modes. The upper-right explanation link exposes its expanded state; closing the explanation returns focus to that link. Native details/summary rows disclose further reading with plus/minus indicators.
+Number, Coin, Dice and Choose form an equal-width segmented tablist with icons and labels. Selected state has both a fill and a visible border. Selection updates the matching panel and roving tab stop. Arrow keys and Home/End still work. How it works is a 44px outlined control at the upper right; it exposes expanded state and receives focus when the explanation closes. Native disclosure rows reveal additional details.
 
 ### Living ASCII Sky
 

@@ -89,7 +89,7 @@ async function generate() {
     const flash=inputSnapshot.flashes[parseInt(outcome.digest.slice(8,16),16)%inputSnapshot.flashes.length];
     last={version:1,algorithm:ALGORITHM,generatedAt:new Date().toISOString(),mode:inputMode,config,nonce,seed:inputSnapshot.seed,outcome,displayValue:value,flash,source:inputSnapshot.sources[flash.source],snapshot:inputWrapper};
     $('result-label').textContent=resultNames[inputMode];$('result').textContent=value;
-    $('result').className=`result${inputMode==='choice'?' choice':value.length>6?' long':''}`;
+    $('result').className=`result${inputMode==='choice'?' choice':value.length>6?' long':value.length>3?' medium':''}`;
     $('result-actions').hidden=false;$('receipt').disabled=false;$('receipt-note').textContent=inputMode==='choice'?'This receipt includes your full choice list.':'Includes the exact inputs needed to reproduce this result.';livingSky?.strike(outcome.digest);updateAge();
     if(!$('observation').hidden)showObservation();
   }catch(error){showError(`Could not generate a result. ${error.message}`);}
@@ -130,21 +130,21 @@ async function makeCard(result) {
   const c=document.createElement('canvas');c.width=1200;c.height=1500;const ctx=c.getContext('2d');
   ctx.fillStyle='#07171d';ctx.fillRect(0,0,c.width,c.height);
   const art=document.createElement('canvas');drawAscii(art,result.outcome.digest,900,1400);ctx.globalAlpha=.72;ctx.drawImage(art,350,-20);ctx.globalAlpha=1;
-  ctx.fillStyle='#eaf1eb';ctx.font='500 37px Manrope';ctx.fillText('stormseed',80,105);
-  ctx.fillStyle='#9dafb3';ctx.font='22px Manrope';ctx.fillText('A little chaos. A clear answer.',80,165);
-  ctx.fillStyle='#d9efae';ctx.font='25px Manrope';ctx.fillText(result.mode==='coin'?'The coin landed on':result.mode==='dice'?'The die landed on':'The sky picked',80,570);
+  ctx.fillStyle='#eaf1eb';ctx.font='500 37px "Space Grotesk"';ctx.fillText('stormseed',80,105);
+  ctx.fillStyle='#9dafb3';ctx.font='22px "Space Grotesk"';ctx.fillText('A little chaos. A clear answer.',80,165);
+  ctx.fillStyle='#d9efae';ctx.font='25px "Space Grotesk"';ctx.fillText(result.mode==='coin'?'The coin landed on':result.mode==='dice'?'The die landed on':'The sky picked',80,570);
   const length=result.displayValue.length;let size=length<5?190:length<10?125:74;
-  ctx.fillStyle='#eaf1eb';ctx.font=`${size}px Manrope`;
+  ctx.fillStyle='#eaf1eb';ctx.font=`${size}px "Space Grotesk"`;
   let lines=wrapText(ctx,result.displayValue,1010);
-  while(lines.length*size*1.2>340 && size>35){size-=3;ctx.font=`${size}px Manrope`;lines=wrapText(ctx,result.displayValue,1010);}
+  while(lines.length*size*1.2>340 && size>35){size-=3;ctx.font=`${size}px "Space Grotesk"`;lines=wrapText(ctx,result.displayValue,1010);}
   lines.forEach((line,i)=>ctx.fillText(line,73,620+size+i*size*1.2));
   const detail=result.mode==='number'?`A number from ${result.config.min} to ${result.config.max}`:result.mode==='dice'?`One ${result.config.max}-sided die`:result.mode==='coin'?'One coin. Two possibilities.':`One of ${result.config.choices.length} choices`;
-  ctx.fillStyle='#9dafb3';ctx.font='23px Manrope';ctx.fillText(detail,80,1060);
+  ctx.fillStyle='#9dafb3';ctx.font='23px "Space Grotesk"';ctx.fillText(detail,80,1060);
   ctx.strokeStyle='#34505a';ctx.beginPath();ctx.moveTo(80,1130);ctx.lineTo(1120,1130);ctx.stroke();
   ctx.fillStyle='#d9efae';ctx.font='18px "IBM Plex Mono"';ctx.fillText('REAL LIGHTNING + BROWSER RANDOMNESS',80,1190);
   ctx.fillStyle='#9dafb3';ctx.font='19px "IBM Plex Mono"';ctx.fillText(`Snapshot: ${JSON.parse(result.snapshot.material).observedEnd.slice(0,16).replace('T',' ')} UTC`,80,1235);
   ctx.fillText(`Result ${result.outcome.digest.slice(0,12)} · ${result.generatedAt.slice(0,10)}`,80,1270);
-  ctx.fillStyle='#eaf1eb';ctx.font='24px Manrope';ctx.fillText('Let lightning decide.',80,1370);
+  ctx.fillStyle='#eaf1eb';ctx.font='24px "Space Grotesk"';ctx.fillText('Let lightning decide.',80,1370);
   ctx.fillStyle='#9dafb3';ctx.font='19px "IBM Plex Mono"';ctx.fillText('ma4ypic4y.github.io/stormseed',80,1415);
   return new Promise((resolve,reject)=>c.toBlob(blob=>blob?resolve(blob):reject(new Error('Image export failed.')),'image/png'));
 }

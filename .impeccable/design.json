@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-22T13:48:47.263939+00:00",
+  "generatedAt": "2026-10-22T14:04:48.754119+00:00",
   "title": "Design System: Stormseed",
   "extensions": {
     "colorMeta": {
@@ -116,7 +116,7 @@
     "shadows": [
       {
         "name": "result-legibility",
-        "value": "0 2px 30px #06141c",
+        "value": "0 3px 32px #06141c",
         "purpose": "Text shadow softens the animated field behind the answer."
       }
     ],
@@ -149,26 +149,33 @@
       },
       {
         "name": "narrow-layout",
-        "value": "max-width: 350px"
+        "value": "max-width: 360px"
       },
       {
-        "name": "tall-viewport",
-        "value": "min-height: 950px"
+        "name": "compact-height",
+        "value": "min-width: 701px and max-height: 850px"
       },
       {
         "name": "dense-mobile-glyphs",
         "value": "width < 600px"
       }
-    ]
+    ],
+    "responsive": {
+      "picker": "clamp(360px, 29vw, 600px)",
+      "headline": "clamp(40px, 3.5vw, 76px)",
+      "answer": "clamp(128px, min(12vw, 19svh), 224px)",
+      "actionHeight": "clamp(58px, 4.2vw, 76px)",
+      "footer": "In-flow grid row; two rows below 700px."
+    }
   },
   "components": [
     {
       "name": "Generate button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "The dominant action, with bolt and directional icons.",
-      "html": "<button class=\"ds-generate\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 2-9 12h7l-2 8 9-12h-7l2-8Z\"/></svg><span>Let lightning decide</span><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M5 15 15 5M5 5h10v10\"/></svg></button>",
-      "css": ".ds-generate{font-family:var(--sans,Manrope,sans-serif);width:100%;max-width:340px;display:flex;align-items:center;justify-content:center;gap:11px;background:var(--accent,#dcefc5);color:#15251d;border:0;border-radius:30px;padding:13px 20px;font-size:13px;font-weight:600;min-height:49px;cursor:pointer;transition:background .2s,transform .2s}.ds-generate svg{width:16px;height:18px;stroke:currentColor;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}.ds-generate svg:first-child{margin-right:auto}.ds-generate svg:last-child{margin-left:auto}.ds-generate:hover:enabled{background:#edffda;transform:translateY(-1px)}.ds-generate:active:enabled{transform:translateY(1px)}.ds-generate:disabled{opacity:.55;cursor:wait}.ds-generate:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-generate{transition:none;transform:none!important}}"
+      "description": "A single action key with a pale label area and a dark bolt cell.",
+      "html": "<button class=\"ds-generate\"><span>Generate a number</span><span class=\"ds-strike\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 2-9 12h7l-2 8 9-12h-7l2-8Z\"/></svg></span></button>",
+      "css": ".ds-generate{font:500 18px \"Space Grotesk\",sans-serif;display:flex;align-items:stretch;width:100%;max-width:600px;min-height:64px;padding:0;border:1px solid #dcefc5;border-radius:4px;background:#dcefc5;color:#15251d;cursor:pointer}.ds-generate>span:first-child{flex:1;align-self:center;padding:14px 18px}.ds-strike{display:grid;place-items:center;width:64px;background:#18332c;color:#dcefc5}.ds-strike svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.5}.ds-generate:hover{background:#edffda}.ds-generate:active{transform:translateY(2px)}.ds-generate:disabled{opacity:.55;cursor:wait}.ds-generate:focus-visible{outline:2px solid #dcefc5;outline-offset:5px}"
     },
     {
       "name": "Quiet result action",
@@ -176,7 +183,7 @@
       "refersTo": "button-quiet",
       "description": "Lightweight actions displayed after generation.",
       "html": "<button class=\"ds-quiet\">Copy</button>",
-      "css": ".ds-quiet{font-family:var(--sans,Manrope,sans-serif);padding:4px 2px;background:none;border:0;color:var(--muted,#a4bac1);font-size:11px;min-height:28px;cursor:pointer}.ds-quiet:hover{color:var(--ink,#eaf2ed)}.ds-quiet:disabled{opacity:.55;cursor:wait}.ds-quiet:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
+      "css": ".ds-quiet{font-family:var(--sans,\"Space Grotesk\",sans-serif);padding:4px 2px;background:none;border:0;color:var(--muted,#a4bac1);font-size:14px;min-height:44px;cursor:pointer}.ds-quiet:hover{color:var(--ink,#eaf2ed)}.ds-quiet:disabled{opacity:.55;cursor:wait}.ds-quiet:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
     },
     {
       "name": "Range field",
@@ -184,33 +191,33 @@
       "refersTo": "input-number",
       "description": "A visible label and centered monospace value above a fine rule.",
       "html": "<label class=\"ds-range\">From <input type=\"number\" value=\"1\" inputmode=\"numeric\"></label>",
-      "css": ".ds-range{font-family:var(--sans,Manrope,sans-serif);display:flex;align-items:center;gap:9px;font-size:11px;color:var(--muted,#a4bac1)}.ds-range input{width:72px;border:0;border-bottom:1px solid #527381;background:transparent;padding:5px 0 6px;font:13px var(--mono,\"IBM Plex Mono\",monospace);color:var(--ink,#eaf2ed);height:36px;appearance:textfield;text-align:center;border-radius:0;caret-color:var(--accent,#dcefc5)}.ds-range input::-webkit-inner-spin-button,.ds-range input::-webkit-outer-spin-button{appearance:none;margin:0}.ds-range input:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
+      "css": ".ds-range{font-family:var(--sans,\"Space Grotesk\",sans-serif);display:flex;align-items:center;gap:9px;font-size:14px;color:var(--muted,#a4bac1)}.ds-range input{width:100%;border:0;border-bottom:1px solid #527381;background:transparent;padding:5px 0 6px;font:13px var(--mono,\"IBM Plex Mono\",monospace);color:var(--ink,#eaf2ed);height:52px;appearance:textfield;text-align:right;border-radius:0;caret-color:var(--accent,#dcefc5)}.ds-range input::-webkit-inner-spin-button,.ds-range input::-webkit-outer-spin-button{appearance:none;margin:0}.ds-range input:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
     },
     {
       "name": "Picker modes",
       "kind": "nav",
-      "description": "Four quiet mode tabs with a pale active underline. Preview illustrates styling; app supplies keyboard behavior.",
+      "description": "Equal-width segmented modes with a filled selected state and optional icons.",
       "html": "<div class=\"ds-modes\" role=\"tablist\" aria-label=\"What to pick\"><button role=\"tab\" aria-selected=\"true\">Number</button><button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Coin</button><button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Dice</button><button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Choose</button></div>",
-      "css": ".ds-modes{display:flex;justify-content:center;gap:29px}.ds-modes button{font-family:var(--sans,Manrope,sans-serif);border:0;background:none;padding:8px 0;color:#8fa9b4;font-size:12px;position:relative;min-height:38px;cursor:pointer}.ds-modes button[aria-selected=true],.ds-modes button:hover{color:var(--ink,#eaf2ed)}.ds-modes button[aria-selected=true]:after{content:\"\";height:1px;position:absolute;bottom:0;left:0;right:0;background:var(--accent,#dcefc5)}.ds-modes button:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
+      "css": ".ds-modes{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:5px;border:1px solid #34505c;border-radius:6px;background:#091b25}.ds-modes button{font:14px \"Space Grotesk\",sans-serif;min-height:44px;padding:8px 6px;border:1px solid transparent;border-radius:3px;color:#a4bac1;background:none;cursor:pointer}.ds-modes button[aria-selected=true]{color:#eaf2ed;background:#243d48;border-color:#527281}.ds-modes button:focus-visible{outline:2px solid #dcefc5;outline-offset:5px}"
     },
     {
       "name": "Choice field",
       "kind": "input",
       "description": "A compact multiline input with visible guidance and restrained surface.",
       "html": "<label class=\"ds-choice\"><span>Your choices <small>One per line</small></span><textarea rows=\"3\" placeholder=\"Go for a walk&#10;Make something&#10;Call a friend\"></textarea></label>",
-      "css": ".ds-choice{font-family:var(--sans,Manrope,sans-serif);display:block;width:100%;max-width:340px;color:var(--muted,#a4bac1);font-size:10px}.ds-choice>span{display:flex;justify-content:space-between;margin-bottom:7px}.ds-choice small{font-size:10px;color:var(--dim,#8faab5)}.ds-choice textarea{font-family:var(--sans,Manrope,sans-serif);resize:vertical;box-sizing:border-box;width:100%;min-height:86px;max-height:200px;background:#081a24d9;border:1px solid #34505a;border-radius:5px;padding:9px 12px;color:var(--ink,#eaf2ed);font-size:12px;line-height:1.6;caret-color:var(--accent,#dcefc5)}.ds-choice textarea::placeholder{color:var(--dim,#8faab5)}.ds-choice textarea:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
+      "css": ".ds-choice{font-family:var(--sans,\"Space Grotesk\",sans-serif);display:block;width:100%;max-width:600px;color:var(--muted,#a4bac1);font-size:14px}.ds-choice>span{display:flex;justify-content:space-between;margin-bottom:7px}.ds-choice small{font-size:14px;color:var(--dim,#8faab5)}.ds-choice textarea{font-family:var(--sans,\"Space Grotesk\",sans-serif);resize:vertical;box-sizing:border-box;width:100%;min-height:86px;max-height:200px;background:#081a24d9;border:1px solid #34505a;border-radius:5px;padding:9px 12px;color:var(--ink,#eaf2ed);font-size:14px;line-height:1.6;caret-color:var(--accent,#dcefc5)}.ds-choice textarea::placeholder{color:var(--dim,#8faab5)}.ds-choice textarea:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
     },
     {
       "name": "Method disclosure",
       "kind": "custom",
       "description": "Native expandable information with thin separators and a plus/minus marker.",
       "html": "<details class=\"ds-disclosure\"><summary>Is this live? Does it cover the whole planet?</summary><p>It is a recent snapshot, not a live stream. The observed age is always shown.</p></details>",
-      "css": ".ds-disclosure{font-family:var(--sans,Manrope,sans-serif);max-width:590px;color:var(--ink,#eaf2ed);border-top:1px solid var(--line,#34505c);padding:16px 0}.ds-disclosure summary{cursor:pointer;font-size:13px;list-style:none;display:flex;justify-content:space-between;gap:15px;align-items:center}.ds-disclosure summary::-webkit-details-marker{display:none}.ds-disclosure summary:after{content:\"+\";font-size:20px;color:var(--dim,#8faab5)}.ds-disclosure[open] summary:after{content:\"−\"}.ds-disclosure p{color:#b3c6cd;font-size:13px;line-height:1.8}.ds-disclosure summary:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
+      "css": ".ds-disclosure{font-family:var(--sans,\"Space Grotesk\",sans-serif);max-width:590px;color:var(--ink,#eaf2ed);border-top:1px solid var(--line,#34505c);padding:16px 0}.ds-disclosure summary{cursor:pointer;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:15px;align-items:center}.ds-disclosure summary::-webkit-details-marker{display:none}.ds-disclosure summary:after{content:\"+\";font-size:20px;color:var(--dim,#8faab5)}.ds-disclosure[open] summary:after{content:\"\u2212\"}.ds-disclosure p{color:#b3c6cd;font-size:16px;line-height:1.8}.ds-disclosure summary:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
     }
   ],
   "narrative": {
     "northStar": "A living ASCII sky",
-    "overview": "A dark, atmospheric field of real rendered glyphs surrounds a clean, compact instrument. The sky supplies the expression; restrained controls keep the decision easy. These rules capture the finished implementation in `public/index.html`, `public/style.css`, and `public/live-sky.js`, following the approved direction in `.impeccable/review/contract.md`.",
+    "overview": "A dark, atmospheric field of real rendered glyphs surrounds a clean, responsive instrument. The sky supplies the expression; restrained controls keep the decision easy. These rules capture the finished implementation in `public/index.html`, `public/style.css`, and `public/live-sky.js`, following the user-directed revisions in `.impeccable/review/contract.md`.",
     "keyCharacteristics": [
       "A full-screen, continuously shimmering ASCII scene.",
       "A centered tool with no homepage header or enclosing card.",

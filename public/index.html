@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#07171d">
   <title>Stormseed — Let lightning decide.</title>
   <meta name="description" content="A random picker seeded by real lightning. Pick a number, flip a coin, roll a die, or let the storm choose. Open data. A little natural chaos.">
@@ -9,7 +9,7 @@
   <meta property="og:title" content="Stormseed — Let lightning decide."><meta property="og:description" content="Small decisions. Real lightning. A beautiful random picker seeded by the sky."><meta property="og:type" content="website"><meta property="og:url" content="https://ma4ypic4y.github.io/stormseed/"><meta property="og:image" content="https://ma4ypic4y.github.io/stormseed/assets/social.png">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@mbor1sov"><meta name="twitter:title" content="Stormseed — Let lightning decide."><meta name="twitter:description" content="A random picker seeded by real lightning."><meta name="twitter:image" content="https://ma4ypic4y.github.io/stormseed/assets/social.png">
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="./assets/manrope.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/space-grotesk.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="./style.css"><script type="module" src="./app.js"></script>
 </head>
 <body>
@@ -23,10 +23,10 @@
     <p class="intro">A random picker, seeded by real lightning.</p>
     <div class="picker">
       <div class="modes" role="tablist" aria-label="What to pick">
-        <button type="button" role="tab" id="tab-number" aria-selected="true" aria-controls="panel-number" data-mode="number">Number</button>
-        <button type="button" role="tab" id="tab-coin" aria-selected="false" aria-controls="panel-coin" tabindex="-1" data-mode="coin">Coin</button>
-        <button type="button" role="tab" id="tab-dice" aria-selected="false" aria-controls="panel-dice" tabindex="-1" data-mode="dice">Dice</button>
-        <button type="button" role="tab" id="tab-choice" aria-selected="false" aria-controls="panel-choice" tabindex="-1" data-mode="choice">Choose</button>
+        <button type="button" role="tab" id="tab-number" aria-selected="true" aria-controls="panel-number" data-mode="number"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 3-2 14M14 3l-2 14M3 7h14M2 13h14"/></svg><span>Number</span></button>
+        <button type="button" role="tab" id="tab-coin" aria-selected="false" aria-controls="panel-coin" tabindex="-1" data-mode="coin"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 6v8M8 7h3a2 2 0 0 1 0 4H9a2 2 0 0 1 0-4"/></svg><span>Coin</span></button>
+        <button type="button" role="tab" id="tab-dice" aria-selected="false" aria-controls="panel-dice" tabindex="-1" data-mode="dice"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="3"/><path d="M7 7h.01M13 7h.01M10 10h.01M7 13h.01M13 13h.01" stroke-width="2.5"/></svg><span>Dice</span></button>
+        <button type="button" role="tab" id="tab-choice" aria-selected="false" aria-controls="panel-choice" tabindex="-1" data-mode="choice"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5h10M7 10h10M7 15h10M2 5h.01M2 10h.01M2 15h.01"/></svg><span>Choose</span></button>
       </div>
       <div class="result-stage" aria-live="polite" aria-atomic="true"><p class="result-label" id="result-label">A number from 1 to 100</p><div id="result" class="result empty">—</div></div>
       <div class="settings">
@@ -36,8 +36,8 @@
         <div id="panel-choice" role="tabpanel" aria-labelledby="tab-choice" hidden><label class="choice-label" for="choices">Your choices <span>One per line</span></label><textarea id="choices" rows="3" maxlength="20200" placeholder="Go for a walk&#10;Make something&#10;Call a friend"></textarea></div>
       </div>
       <p id="error" class="error" role="alert" hidden></p>
-      <button type="button" id="generate" class="generate" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 2-9 12h7l-2 8 9-12h-7l2-8Z"/></svg><span id="generate-label">Connecting to the sky…</span><svg class="button-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10"/></svg></button>
-      <div class="actions-space"><div id="result-actions" class="result-actions" hidden><button type="button" id="copy-result">Copy</button><span aria-hidden="true">·</span><button type="button" id="save-card">Save card <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8m-3-3 3 3 3-3M3 11v3h10v-3"/></svg></button><span aria-hidden="true">·</span><button type="button" id="share">Share</button></div>
+      <button type="button" id="generate" class="generate" disabled><span id="generate-label" class="generate-label">Connecting to the sky…</span><span class="strike-key" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m14 2-9 12h7l-2 8 9-12h-7l2-8Z"/></svg></span></button>
+      <div class="actions-space"><div id="result-actions" class="result-actions" hidden><button type="button" id="copy-result"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M13 4V3H3v10h1"/></svg>Copy</button><button type="button" id="save-card">Save card <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8m-3-3 3 3 3-3M3 11v3h10v-3"/></svg></button><button type="button" id="share"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 13V2m-4 4 4-4 4 4M5 9H3v8h14V9h-2"/></svg>Share</button></div>
       </div><p class="hybrid-note" id="hybrid-note">Lightning data + browser randomness.</p>
       <p class="action-status" id="action-status" role="status"></p>
     </div>

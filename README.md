@@ -52,7 +52,7 @@ The illustrated flash is selected only as a representative member of the full ha
 
 ## Design and sharing
 
-A dark ocean-blue canvas, warm pale-green controls, self-hosted Manrope and IBM Plex Mono, and a single clear action centered in a full-screen live ASCII sky. A WebGL glyph shader continuously shimmers; every generation adds a bright branching bolt. Rendering uses a 1.5–2× canvas, pauses animation in hidden tabs, and respects reduced motion. A static canvas fallback is available when WebGL is unsupported. Semantic tabs, keyboard navigation, labelled inputs and live status announcements are included. Share exports only the selected answer and site URL; save-card produces a 1200 × 1500 PNG locally. Choices are not sent to an application server. Hosting still has ordinary request metadata.
+A dark ocean-blue canvas, warm pale-green controls, self-hosted Space Grotesk and IBM Plex Mono, and a single clear action centered in a full-screen live ASCII sky. A split action key and segmented mode controls scale with the viewport; a fluid 360–600px picker replaces the former narrow fixed layout. Short screens use tighter spacing, while source metadata stays in document flow. A WebGL glyph shader continuously shimmers; every generation adds a bright branching bolt. Rendering uses a 1.5–2× canvas, pauses animation in hidden tabs, and respects reduced motion. A static canvas fallback is available when WebGL is unsupported. Semantic tabs, keyboard navigation, labelled inputs and live status announcements are included. Share exports only the selected answer and site URL; save-card produces a 1200 × 1500 PNG locally. Choices are not sent to an application server. Hosting still has ordinary request metadata.
 
 The intended return loop is utility → decision → result card → another person trying the tool. This is a hypothesis to test with feedback, not a promise of virality. An independently verifiable future-event draw would require commitment and timestamp infrastructure; it is outside this release.
 
@@ -65,4 +65,4 @@ The intended return loop is utility → decision → result card → another per
 - [Blitzortung project and access description](https://www.blitzortung.org/en/cover_your_area.php).
 - [NIST SP 800-90B](https://csrc.nist.gov/pubs/sp/800/90/b/final).
 - [W3C Web Cryptography API](https://www.w3.org/TR/WebCryptoAPI/#Crypto-method-getRandomValues).
-- Manrope and IBM Plex Mono are redistributed under their SIL Open Font Licenses in `public/assets/`.
+- Space Grotesk and IBM Plex Mono are redistributed under their SIL Open Font Licenses in `public/assets/`.

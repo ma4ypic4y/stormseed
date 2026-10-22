@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T13:48:47.263939+00:00",
+  "title": "Design System: Stormseed",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Deep night",
+        "tonalRamp": [
+          "oklch(15.00% 0.02600 234.62)",
+          "oklch(26.43% 0.02600 234.62)",
+          "oklch(37.86% 0.02600 234.62)",
+          "oklch(49.29% 0.02600 234.62)",
+          "oklch(60.71% 0.02600 234.62)",
+          "oklch(72.14% 0.02600 234.62)",
+          "oklch(83.57% 0.02600 234.62)",
+          "oklch(95.00% 0.02600 234.62)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Cloud white",
+        "tonalRamp": [
+          "oklch(15.00% 0.01076 158.84)",
+          "oklch(26.43% 0.01076 158.84)",
+          "oklch(37.86% 0.01076 158.84)",
+          "oklch(49.29% 0.01076 158.84)",
+          "oklch(60.71% 0.01076 158.84)",
+          "oklch(72.14% 0.01076 158.84)",
+          "oklch(83.57% 0.01076 158.84)",
+          "oklch(95.00% 0.01076 158.84)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Cool mist",
+        "tonalRamp": [
+          "oklch(15.00% 0.02616 218.87)",
+          "oklch(26.43% 0.02616 218.87)",
+          "oklch(37.86% 0.02616 218.87)",
+          "oklch(49.29% 0.02616 218.87)",
+          "oklch(60.71% 0.02616 218.87)",
+          "oklch(72.14% 0.02616 218.87)",
+          "oklch(83.57% 0.02616 218.87)",
+          "oklch(95.00% 0.02616 218.87)"
+        ]
+      },
+      "dim": {
+        "role": "neutral",
+        "displayName": "Distant blue",
+        "tonalRamp": [
+          "oklch(15.00% 0.03388 224.43)",
+          "oklch(26.43% 0.03388 224.43)",
+          "oklch(37.86% 0.03388 224.43)",
+          "oklch(49.29% 0.03388 224.43)",
+          "oklch(60.71% 0.03388 224.43)",
+          "oklch(72.14% 0.03388 224.43)",
+          "oklch(83.57% 0.03388 224.43)",
+          "oklch(95.00% 0.03388 224.43)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Storm edge",
+        "tonalRamp": [
+          "oklch(15.00% 0.03909 226.72)",
+          "oklch(26.43% 0.03909 226.72)",
+          "oklch(37.86% 0.03909 226.72)",
+          "oklch(49.29% 0.03909 226.72)",
+          "oklch(60.71% 0.03909 226.72)",
+          "oklch(72.14% 0.03909 226.72)",
+          "oklch(83.57% 0.03909 226.72)",
+          "oklch(95.00% 0.03909 226.72)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Pale lightning green",
+        "tonalRamp": [
+          "oklch(15.00% 0.05903 127.36)",
+          "oklch(26.43% 0.05903 127.36)",
+          "oklch(37.86% 0.05903 127.36)",
+          "oklch(49.29% 0.05903 127.36)",
+          "oklch(60.71% 0.05903 127.36)",
+          "oklch(72.14% 0.05903 127.36)",
+          "oklch(83.57% 0.05903 127.36)",
+          "oklch(95.00% 0.05903 127.36)"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Lit pale green",
+        "tonalRamp": [
+          "oklch(15.00% 0.05194 128.55)",
+          "oklch(26.43% 0.05194 128.55)",
+          "oklch(37.86% 0.05194 128.55)",
+          "oklch(49.29% 0.05194 128.55)",
+          "oklch(60.71% 0.05194 128.55)",
+          "oklch(72.14% 0.05194 128.55)",
+          "oklch(83.57% 0.05194 128.55)",
+          "oklch(95.00% 0.05194 128.55)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "result": {
+        "displayName": "Result",
+        "purpose": "Large tabular numerals; long answers and choices use smaller content-sensitive variants."
+      },
+      "mono": {
+        "displayName": "Monospace values",
+        "purpose": "Range inputs; smaller sizes identify source metadata and glyph rendering."
+      }
+    },
+    "shadows": [
+      {
+        "name": "result-legibility",
+        "value": "0 2px 30px #06141c",
+        "purpose": "Text shadow softens the animated field behind the answer."
+      }
+    ],
+    "motion": [
+      {
+        "name": "control-transition",
+        "value": "200ms",
+        "purpose": "Primary-button background and transform; method-link color."
+      },
+      {
+        "name": "sky-frame-threshold",
+        "value": "32ms",
+        "purpose": "Approximately 30fps shimmer while visible and motion is allowed."
+      },
+      {
+        "name": "strike-window",
+        "value": "4s",
+        "purpose": "Result-seeded traveling bolt with exponential fade."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Static sky, no strike, no CSS transitions or smooth scrolling."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile-layout",
+        "value": "max-width: 700px"
+      },
+      {
+        "name": "narrow-layout",
+        "value": "max-width: 350px"
+      },
+      {
+        "name": "tall-viewport",
+        "value": "min-height: 950px"
+      },
+      {
+        "name": "dense-mobile-glyphs",
+        "value": "width < 600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Generate button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The dominant action, with bolt and directional icons.",
+      "html": "<button class=\"ds-generate\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 2-9 12h7l-2 8 9-12h-7l2-8Z\"/></svg><span>Let lightning decide</span><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path d=\"M5 15 15 5M5 5h10v10\"/></svg></button>",
+      "css": ".ds-generate{font-family:var(--sans,Manrope,sans-serif);width:100%;max-width:340px;display:flex;align-items:center;justify-content:center;gap:11px;background:var(--accent,#dcefc5);color:#15251d;border:0;border-radius:30px;padding:13px 20px;font-size:13px;font-weight:600;min-height:49px;cursor:pointer;transition:background .2s,transform .2s}.ds-generate svg{width:16px;height:18px;stroke:currentColor;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}.ds-generate svg:first-child{margin-right:auto}.ds-generate svg:last-child{margin-left:auto}.ds-generate:hover:enabled{background:#edffda;transform:translateY(-1px)}.ds-generate:active:enabled{transform:translateY(1px)}.ds-generate:disabled{opacity:.55;cursor:wait}.ds-generate:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}@media(prefers-reduced-motion:reduce){.ds-generate{transition:none;transform:none!important}}"
+    },
+    {
+      "name": "Quiet result action",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Lightweight actions displayed after generation.",
+      "html": "<button class=\"ds-quiet\">Copy</button>",
+      "css": ".ds-quiet{font-family:var(--sans,Manrope,sans-serif);padding:4px 2px;background:none;border:0;color:var(--muted,#a4bac1);font-size:11px;min-height:28px;cursor:pointer}.ds-quiet:hover{color:var(--ink,#eaf2ed)}.ds-quiet:disabled{opacity:.55;cursor:wait}.ds-quiet:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
+    },
+    {
+      "name": "Range field",
+      "kind": "input",
+      "refersTo": "input-number",
+      "description": "A visible label and centered monospace value above a fine rule.",
+      "html": "<label class=\"ds-range\">From <input type=\"number\" value=\"1\" inputmode=\"numeric\"></label>",
+      "css": ".ds-range{font-family:var(--sans,Manrope,sans-serif);display:flex;align-items:center;gap:9px;font-size:11px;color:var(--muted,#a4bac1)}.ds-range input{width:72px;border:0;border-bottom:1px solid #527381;background:transparent;padding:5px 0 6px;font:13px var(--mono,\"IBM Plex Mono\",monospace);color:var(--ink,#eaf2ed);height:36px;appearance:textfield;text-align:center;border-radius:0;caret-color:var(--accent,#dcefc5)}.ds-range input::-webkit-inner-spin-button,.ds-range input::-webkit-outer-spin-button{appearance:none;margin:0}.ds-range input:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
+    },
+    {
+      "name": "Picker modes",
+      "kind": "nav",
+      "description": "Four quiet mode tabs with a pale active underline. Preview illustrates styling; app supplies keyboard behavior.",
+      "html": "<div class=\"ds-modes\" role=\"tablist\" aria-label=\"What to pick\"><button role=\"tab\" aria-selected=\"true\">Number</button><button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Coin</button><button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Dice</button><button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Choose</button></div>",
+      "css": ".ds-modes{display:flex;justify-content:center;gap:29px}.ds-modes button{font-family:var(--sans,Manrope,sans-serif);border:0;background:none;padding:8px 0;color:#8fa9b4;font-size:12px;position:relative;min-height:38px;cursor:pointer}.ds-modes button[aria-selected=true],.ds-modes button:hover{color:var(--ink,#eaf2ed)}.ds-modes button[aria-selected=true]:after{content:\"\";height:1px;position:absolute;bottom:0;left:0;right:0;background:var(--accent,#dcefc5)}.ds-modes button:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
+    },
+    {
+      "name": "Choice field",
+      "kind": "input",
+      "description": "A compact multiline input with visible guidance and restrained surface.",
+      "html": "<label class=\"ds-choice\"><span>Your choices <small>One per line</small></span><textarea rows=\"3\" placeholder=\"Go for a walk&#10;Make something&#10;Call a friend\"></textarea></label>",
+      "css": ".ds-choice{font-family:var(--sans,Manrope,sans-serif);display:block;width:100%;max-width:340px;color:var(--muted,#a4bac1);font-size:10px}.ds-choice>span{display:flex;justify-content:space-between;margin-bottom:7px}.ds-choice small{font-size:10px;color:var(--dim,#8faab5)}.ds-choice textarea{font-family:var(--sans,Manrope,sans-serif);resize:vertical;box-sizing:border-box;width:100%;min-height:86px;max-height:200px;background:#081a24d9;border:1px solid #34505a;border-radius:5px;padding:9px 12px;color:var(--ink,#eaf2ed);font-size:12px;line-height:1.6;caret-color:var(--accent,#dcefc5)}.ds-choice textarea::placeholder{color:var(--dim,#8faab5)}.ds-choice textarea:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
+    },
+    {
+      "name": "Method disclosure",
+      "kind": "custom",
+      "description": "Native expandable information with thin separators and a plus/minus marker.",
+      "html": "<details class=\"ds-disclosure\"><summary>Is this live? Does it cover the whole planet?</summary><p>It is a recent snapshot, not a live stream. The observed age is always shown.</p></details>",
+      "css": ".ds-disclosure{font-family:var(--sans,Manrope,sans-serif);max-width:590px;color:var(--ink,#eaf2ed);border-top:1px solid var(--line,#34505c);padding:16px 0}.ds-disclosure summary{cursor:pointer;font-size:13px;list-style:none;display:flex;justify-content:space-between;gap:15px;align-items:center}.ds-disclosure summary::-webkit-details-marker{display:none}.ds-disclosure summary:after{content:\"+\";font-size:20px;color:var(--dim,#8faab5)}.ds-disclosure[open] summary:after{content:\"−\"}.ds-disclosure p{color:#b3c6cd;font-size:13px;line-height:1.8}.ds-disclosure summary:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A living ASCII sky",
+    "overview": "A dark, atmospheric field of real rendered glyphs surrounds a clean, compact instrument. The sky supplies the expression; restrained controls keep the decision easy. These rules capture the finished implementation in `public/index.html`, `public/style.css`, and `public/live-sky.js`, following the approved direction in `.impeccable/review/contract.md`.",
+    "keyCharacteristics": [
+      "A full-screen, continuously shimmering ASCII scene.",
+      "A centered tool with no homepage header or enclosing card.",
+      "A bright branching bolt after each successful generation.",
+      "Small peripheral links and progressively disclosed explanation."
+    ],
+    "rules": [
+      {
+        "name": "The Readable Center Rule",
+        "body": "Keep the center of the sky subdued so the instrument remains legible without an enclosing panel.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "**Do** preserve the calm reading area inside the full-screen ASCII atmosphere.",
+      "**Do** keep generation dominant and peripheral links quiet.",
+      "**Do** adapt result typography to long numbers and multiline choices.",
+      "**Do** preserve the static, flash-free reduced-motion experience.",
+      "**Do** show actual source age and keep source metadata tied to the displayed result."
+    ],
+    "donts": [
+      "**Don't** restore a homepage header, split illustration layout, or enclosing tool card.",
+      "**Don't** replace rendered ASCII with a stock image or static decorative screenshot.",
+      "**Don't** imply that the artistic bolt depicts an exact measured flash or that cached observations are a live stream."
+    ]
+  }
+}

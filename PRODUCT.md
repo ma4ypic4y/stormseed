@@ -20,7 +20,7 @@ Every result mixes a public satellite lightning snapshot with fresh browser rand
 A fixed 1–100 number and one six-sided die. No list choices, coin or custom range. Shareable visual result. Top navigation opens a concise explanation. English interface, public GitHub Pages hosting under ma4ypic4y, creator link https://x.com/mbor1sov. Public data, no paid API. Scheduled ingestion must expose observation age and fail honestly.
 
 ## Brand Commitments
-Latest request overrides the earlier dark blue ASCII direction: completely replace the rejected background and interface. Minimal, avant-garde, unconventional self-hosted typography, clean ground, expressive number and restrained generation motion. English copy stays short and natural. Wide displays must have a deliberate composition, not a tiny instrument marooned in empty space.
+Latest request overrides the earlier dark blue ASCII direction: completely replace the rejected background and interface. User confirmed a dark, almost black palette. Minimal, avant-garde, unconventional self-hosted typography, clean ground, expressive number and restrained generation motion. English copy stays short and natural. Wide displays must have a deliberate composition, not a tiny instrument marooned in empty space.
 
 ## Evidence on Hand
 NOAA GOES GLM open observations; RANDOM.ORG atmospheric-noise prior art; NIST entropy-source requirements. No measured lower bound for lightning min-entropy exists for this pipeline.

@@ -1,157 +1,190 @@
 ---
 name: Stormseed
-description: A responsive random picker inside a living ASCII sky.
+description: A chance print, seeded by real lightning.
 colors:
-  bg: "#06141c"
-  ink: "#eaf2ed"
-  muted: "#a4bac1"
-  dim: "#8faab5"
-  line: "#34505c"
-  accent: "#dcefc5"
-  accent-hover: "#edffda"
+  paper: "#171815"
+  ink: "#f1f0e8"
+  muted: "#a3a59b"
+  red: "#f0785c"
+  line: "#393b34"
 typography:
-  headline:
-    fontFamily: "Space Grotesk, sans-serif"
-    fontSize: "clamp(40px, 3.5vw, 76px)"
-    fontWeight: 400
-    lineHeight: 1.08
-    letterSpacing: "-0.04em"
   result:
-    fontFamily: "Space Grotesk, sans-serif"
-    fontSize: "clamp(128px, min(12vw, 19svh), 224px)"
-    fontWeight: 400
+    fontFamily: "Basteleur, serif"
+    fontSize: "min(clamp(260px, min(33vw, 61svh), 720px), 68cqw)"
+    fontWeight: 700
     lineHeight: 1
     letterSpacing: "-0.04em"
+  result-three-digits:
+    fontFamily: "Basteleur, serif"
+    fontSize: "min(clamp(220px, min(26vw, 51svh), 570px), 44cqw)"
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: "-0.04em"
+  brand:
+    fontFamily: "Basteleur, serif"
+    fontSize: "clamp(24px, 1.7vw, 36px)"
+    lineHeight: 1.2
+  headline:
+    fontFamily: "Apfel, sans-serif"
+    fontSize: "clamp(36px, 3.1vw, 64px)"
+    fontWeight: 400
+    lineHeight: 1.04
+    letterSpacing: "-0.03em"
   body:
-    fontFamily: "Space Grotesk, sans-serif"
+    fontFamily: "Apfel, sans-serif"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: 1.5
+  label:
+    fontFamily: "Apfel, sans-serif"
     fontSize: "16px"
     fontWeight: 400
-    lineHeight: 1.6
-  label:
-    fontFamily: "Space Grotesk, sans-serif"
-    fontSize: "clamp(14px, .95vw, 18px)"
+    lineHeight: 1.5
+  action:
+    fontFamily: "Apfel, sans-serif"
+    fontSize: "clamp(29px, 2.4vw, 44px)"
     fontWeight: 400
-  mono:
-    fontFamily: "IBM Plex Mono, monospace"
-    fontSize: "clamp(14px, .95vw, 18px)"
+    letterSpacing: "-0.025em"
+  metadata:
+    fontFamily: "Apfel, sans-serif"
+    fontSize: "13px"
     fontWeight: 400
+    lineHeight: 1.4
 rounded:
-  field: "4px"
-  action: "4px"
-  tab: "3px"
-  tab-rail: "6px"
+  disc: "50%"
+spacing:
+  small: "8px"
+  medium: "16px"
+  large: "24px"
+  section: "32px"
+  page-gutter: "clamp(24px, 4vw, 100px)"
 components:
-  button-primary:
-    backgroundColor: "{colors.accent}"
-    textColor: "#15251d"
-    rounded: "{rounded.action}"
+  button-generate:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink}"
+    typography: "{typography.action}"
     padding: "0"
     width: "100%"
-  button-primary-hover:
-    backgroundColor: "{colors.accent-hover}"
-  input-number:
+  action-disc:
+    backgroundColor: "{colors.red}"
+    textColor: "{colors.paper}"
+    rounded: "{rounded.disc}"
+    width: "64px"
+    height: "64px"
+  action-disc-hover:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.paper}"
+  button-result-action:
+    backgroundColor: "transparent"
     textColor: "{colors.ink}"
-    typography: "{typography.mono}"
-    padding: "12px 0"
-    width: "100%"
-    height: "52px"
-  button-quiet:
+    padding: "0"
+  mode-idle:
+    backgroundColor: "transparent"
     textColor: "{colors.muted}"
-    padding: "8px 12px"
+    padding: "0 0 0 17px"
+  mode-selected:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink}"
+    padding: "0 0 0 17px"
 ---
 
 # Design System: Stormseed
 
 ## Overview
 
-**Creative North Star: "A living ASCII sky"**
+**Creative North Star: "A chance print"**
 
-A dark, atmospheric field of real rendered glyphs surrounds a clean, responsive instrument. The sky supplies the expression; restrained controls keep the decision easy. These rules capture the finished implementation in `public/index.html`, `public/style.css`, and `public/live-sky.js`, following the user-directed revisions in `.impeccable/review/contract.md`.
+A chance print. The answer is the artwork: expressive Basteleur numerals or a spare outlined die on a flat, nearly black ground. Apfel brings a quiet, direct voice to the controls and explanation. Warm salmon marks the action and a brief discharge; it never becomes a background atmosphere.
+
+This system uses scale, asymmetry, generous space and a few fine rules. It has no enclosing tool card, generated background or continuous rendering loop. The implemented reference is public/index.html, public/style.css and public/app.js; the generator composition belongs to its surface brief.
 
 **Key Characteristics:**
-- A full-screen, continuously shimmering ASCII scene.
-- A centered tool with no homepage header or enclosing card.
-- A bright branching bolt after each successful generation.
-- Small peripheral links and progressively disclosed explanation.
+
+- Nearly black ground, warm white type and restrained salmon.
+- Self-hosted Basteleur Bold and Apfel Grotezk Regular.
+- An oversized, fully contained answer with quiet controls.
+- One brief, result-triggered motion sequence.
 
 ## Colors
 
-The palette pairs deep blue atmosphere with cool, readable type and a pale green action accent. Frontmatter values are normative; names below describe their application.
+A nearly black ground carries warm white type and one restrained salmon accent. The frontmatter preserves the source CSS values. The existing `paper` and `ink` token names denote ground and foreground; the browser uses the dark color scheme.
 
 ### Primary
 
-- **Pale lightning green (`accent`)** marks the primary action, focus outline, and current-source dot. Its lighter hover variant belongs to the primary button.
-- The canvas adds teal haze and luminous cyan-to-pale-green glyphs through shader lighting, with the center deliberately darkened for reading.
+- **Warm salmon** (`red`): the wordmark dot, action disc, selected-mode dot, focus outline, errors, older-data warning and transient discharge.
 
 ### Neutral
 
-- **Deep night (`bg`)** anchors the page and the result's soft text shadow.
-- **Cloud white (`ink`)** carries the headline, result, selected mode, and field values.
-- **Cool mist (`muted`)** carries supporting copy and quiet actions; **distant blue (`dim`)** carries peripheral metadata.
-- **Storm edge (`line`)** separates disclosed information and outlines secondary controls.
+- **Night ground** (`paper`): the entire page and exported image ground; the nearly black arrow inside the action disc.
+- **Warm white** (`ink`): results, headings, selected controls, fine primary-action rule and die outlines.
+- **Sage grey** (`muted`): purpose copy, result captions, inactive modes and provenance.
+- **Charcoal rule** (`line`): dividers and understated action underlines.
 
-**The Readable Center Rule.** Keep the center of the sky subdued so the instrument remains legible without an enclosing panel.
+**The Single Accent Rule.** Use salmon for action, selected indicators, focus, errors, stale-data status and the brief discharge. Keep the reading ground neutral.
 
 ## Typography
 
-Space Grotesk serves the interface and large result. IBM Plex Mono distinguishes range values, tiny source metadata, and the ASCII glyph atlas. Both fonts are self-hosted and use `font-display: swap`. Space Grotesk is chosen for its open counters and distinctive angular numerals, including the large result; its popularity warning is intentionally accepted for this user-requested typographic replacement.
+Basteleur Bold gives the result and wordmark their distinctive shape; Apfel Grotezk Regular carries interface and reading text. Both fonts are self-hosted WOFF2 with `font-display: swap` and `font-synthesis: none`. Serif and sans-serif fallbacks preserve their roles.
 
-The headline scales from 40 to 76px on desktop and 28 to 42px on narrow screens. The result is the focal point: 128–224px, constrained by both viewport width and height. Four-to-six-character answers use a container-relative size; longer numbers use at most 15cqw / 76px; choices wrap at 28–44px. All variants preserve the complete result. The large numeral is functional output, so it intentionally exceeds the ordinary display-type ceiling.
+The result uses tight tracking and a single line. Three-digit values have their own smaller scale. Both variants combine viewport dimensions with the result area's inline-size container; mobile and short-screen overrides keep the same container caps. Functional output deliberately exceeds ordinary headline sizes.
 
-Body text uses 16px with 1.6 line height. Primary controls use 16–20px, mode labels 14–18px, secondary actions 12–16px, and peripheral metadata 9–16px by role. Range fields use tabular monospace numerals. Mobile fields stay at least 16px to prevent input zoom. Only the ASCII renderer and actual data use monospace.
+**The Contained Answer Rule.** The complete answer must fit its own column. Preserve the 68cqw cap for one or two digits and the 44cqw cap for three digits in every layout.
+
+Apfel headings stay regular, tightly spaced and compact. Purpose copy scales from 17 to 23px; explanation text uses the body role with a maximum measure of 68ch. Result actions are 14px, while desktop metadata is 13px. Mobile purpose copy is 15px, headline 25px and caption 14px. Research prose uses 19px/1.65 and a 78ch measure, with Basteleur reserved for its main title.
 
 ## Layout
 
-The full-height stage uses a two-row grid: the centered instrument and an in-flow footer. The tool can grow to 860px; its picker scales from 360 to 600px using `clamp(360px, 29vw, 600px)`. This replaces the former fixed 340px picker. Page edges scale from 24 to 88px. No CSS transform or zoom scales text.
+The stage fills at least the viewport height, grows naturally with content, and stops at 2400px. A three-row grid holds the masthead, instrument and in-flow colophon. Page gutters grow from 24 to 100px. Desktop gives the result and controls columns in a 1.5:1 ratio, with a bounded gap of 32–180px. The control panel stops at 420px; at 2000px and above it grows to 520px and supporting controls increase in size.
 
-The viewport height constrains result size. At desktop heights below 850px, the result becomes 128px and gaps tighten while touch targets remain usable. The footer stays below the tool, so validation errors, long choices, larger text and short landscape screens extend the page instead of colliding with source details.
+At 760px and below, the instrument becomes one column up to 480px: concise purpose first, result next, controls below. Controls stop at 340px. The colophon uses two columns with the hybrid-source note on a second row. Explanation content becomes one column and observation details become two.
 
-Below 700px the picker uses available width up to 420px, source metadata gets its own row, and brand/creator share the row below. Below 360px optional mode icons are hidden while all four labels and functions remain. Explanations become one column. At wide desktop sizes the title, result, controls and footer all have independent bounded scales; ultrawide screens preserve centered composition without stretching controls edge to edge.
+At widths of at least 761px and heights no greater than 650px, the instrument uses a 1.2:1 split, a 260px result area, smaller type and tighter spacing. At all sizes the result retains its container cap. The result-action row reserves space before generation, preventing the controls from jumping when actions appear.
 
 ## Elevation & Depth
 
-Depth comes from the animated glyph field, haze, vignette, and central darkening. The instrument has no card background, border, or box shadow. A diffuse result text shadow (`0 3px 32px #06141c`) protects its silhouette. Supporting content uses thin rules and restrained translucent fields; keep structural surfaces quiet.
+The system is entirely flat: no shadows, glow, haze, gradients or layered background imagery. Scale and negative space separate the answer from controls; fine rules separate actions and reading sections.
+
+**The Flat Ground Rule.** Separate content through space, scale and fine rules; do not add elevation to the generator.
 
 ## Shapes
 
-The primary action is a rectangular key with a 4px radius and a dark bolt cell at the right. Tabs share a 6px-radius rail; selected tabs have a clearly filled and outlined 3px-radius segment. Inputs and secondary controls use 4px radii. The explanatory close control remains circular. All icons are authored SVG in a consistent thin stroke.
+Use unboxed text controls and thin straight rules. The salmon action disc and the small selected-mode dot are circular. The die is a lightly rotated outline with rounded corners and circular pips, authored as SVG; its corner radius is 40 units in a 300-unit viewBox. Interface arrows and close marks use simple rounded strokes. Do not introduce a general rounded-card vocabulary.
 
 ## Components
 
-### Buttons
+### Generation and secondary actions
 
-The primary action spans the picker and grows from 58 to 76px high. The label fills the pale-green section; the bolt occupies a square dark cell. Both parts form one semantic button and one click target. Hover lightens the fill and tilts the bolt, press moves the key down 2px, disabled state reduces opacity. Copy, Save card and Share have visible icons, 44px targets and a quiet bordered hover treatment. Their reserved row prevents generation from shifting the tool.
+The primary button is an open horizontal line of type beneath a thin ink rule, with a circular arrow at the right. It is at least 94px high on desktop. The disc rotates 45 degrees and changes to ink on hover; pressing scales it to 90%. Disabled controls use half opacity and a wait cursor. Copy, Save card and Share are understated text buttons with subtle underlines and salmon hover feedback.
 
-### Inputs / Fields
+Controls generally reserve at least 44px in height; the compact mobile source and creator controls use 34px. Keyboard focus is a 2px salmon outline with 7px offset. Keep the visible-on-focus skip link, loading label, alert region and action status.
 
-Range fields each fill one half of the picker, with visible labels and right-aligned values above a rule. Native number inputs are 52px high and preserve full-width editing. The select uses a dark surface; the textarea starts at 96px and can resize to 240px. Errors are warm pale text in an alert region. Long results adapt to the picker width rather than overflowing.
+### Modes and navigation
 
-### Navigation
+The two mode buttons use `aria-pressed` in a labelled group. A salmon dot and ink label identify the selected mode; the inactive label is muted. There is no segmented rail. The wordmark and How it works control occupy opposite ends of the masthead. Its plus becomes a minus when the explanation is open; closing restores focus to the opener. Source age opens the observation details. Native disclosure rows keep their familiar markers.
 
-Number, Coin, Dice and Choose form an equal-width segmented tablist with icons and labels. Selected state has both a fill and a visible border. Selection updates the matching panel and roving tab stop. Arrow keys and Home/End still work. How it works is a 44px outlined control at the upper right; it exposes expanded state and receives focus when the explanation closes. Native disclosure rows reveal additional details.
+### Result and discharge
 
-### Living ASCII Sky
+The empty state is a question mark. Number mode displays a complete result from 1–100; dice mode displays the corresponding SVG pips. The polite live caption supplies the accessible result while the oversized visual is hidden from assistive technology.
 
-The fixed, non-interactive canvas covers the viewport. A twelve-character glyph atlas and precomputed branching fields create actual ASCII texture. The canvas renders at 1.5–2 times CSS resolution, using approximately 8×11px cells on desktop and 7×11px cells below 600px. Shimmer updates at roughly 30fps. A result-seeded bolt travels through the scene and fades over a four-second strike window. The scene is an interpretation of lightning, not a geographic rendering of an observation.
+A successful generation triggers one result reveal (500ms) and salmon SVG path trace (600ms); the discharge disappears within 650ms. It has no pointer interaction and does not continue animating. Reduced motion removes animations, transitions and the discharge, and uses immediate scrolling. This mark is an artistic response, not a measured lightning trajectory.
 
-Animation pauses in hidden tabs. Reduced motion freezes the sky and suppresses the strike; CSS also removes transitions and smooth scrolling. Without WebGL, a static ASCII renderer provides the background. Save card produces a separate deterministic 1200×1500 PNG rather than a capture of the live canvas.
+### Exported images
 
-### Accessibility and Status
-
-The decorative canvas is hidden from assistive technology. A visible-on-focus skip link leads to the generator. Interactive controls use a pale green focus outline (2px, 5px offset). The result is a polite, atomic live region; action feedback uses a status region. Preserve visible labels, tab semantics, native disclosures, and explicit loading/error states. Source text shows actual observation age, with an amber dot for older data; the displayed result retains its own snapshot provenance until reset.
+Save card draws a separate 1200×1500 PNG using the same ground, fonts, numeral or die, salmon mark and provenance footer. The site social image is 1200×630; `public/assets/social.provenance.json` records its code-rendered origin and font sources. It is the only shipped raster. Neither export is a generated background or a screenshot of the interface.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** preserve the calm reading area inside the full-screen ASCII atmosphere.
-- **Do** keep generation dominant and peripheral links quiet.
-- **Do** adapt result typography to long numbers and multiline choices.
-- **Do** preserve the static, flash-free reduced-motion experience.
-- **Do** show actual source age and keep source metadata tied to the displayed result.
+- **Do** make the answer the strongest visual element and keep every digit inside its result container.
+- **Do** use the self-hosted typefaces and preserve the quiet, open control treatment.
+- **Do** adapt wide, narrow and short screens with real layout changes.
+- **Do** retain visible focus, live status, loading, error and reduced-motion states.
+- **Do** tie source age and exported provenance to the displayed result.
 
 ### Don't:
 
-- **Don't** restore a homepage header, split illustration layout, or enclosing tool card.
-- **Don't** replace rendered ASCII with a stock image or static decorative screenshot.
-- **Don't** imply that the artistic bolt depicts an exact measured flash or that cached observations are a live stream.
+- **Don't** restore the discarded dark ASCII atmosphere, generated wallpaper or continuous visual animation.
+- **Don't** add cards, shadows, gradients or decorative fields around the generator.
+- **Don't** size the result from viewport width alone or clip the three-digit answer.
+- **Don't** present the salmon discharge as an observed lightning path or a recent snapshot as a live stream.

@@ -52,7 +52,7 @@ The illustrated flash is selected only as a representative member of the full ha
 
 ## Design and sharing
 
-A flat chalk surface, near-black Basteleur numerals and Apfel interface type, with one vermilion action. The number is the artwork: a large left-hand result and compact right-hand controls on desktop, a vertical composition on phones. A short red discharge follows generation; reduced motion suppresses it. There is no animated wallpaper or continuous rendering loop. Two fixed modes remove range setup and choice lists. Focus states, native buttons and live result announcements support keyboard and screen-reader use. Share exports the selected answer and site URL; save-card produces a 1200 × 1500 PNG locally. Hosting still has ordinary request metadata.
+An almost-black surface, pale Basteleur numerals and Apfel interface type, with one warm red action. The number is the artwork: a large left-hand result and compact right-hand controls on desktop, a vertical composition on phones. A short red discharge follows generation; reduced motion suppresses it. There is no animated wallpaper or continuous rendering loop. Two fixed modes remove range setup and choice lists. Focus states, native buttons and live result announcements support keyboard and screen-reader use. Share exports the selected answer and site URL; save-card produces a 1200 × 1500 PNG locally. Hosting still has ordinary request metadata.
 
 The intended return loop is utility → decision → result card → another person trying the tool. This is a hypothesis to test with feedback, not a promise of virality. An independently verifiable future-event draw would require commitment and timestamp infrastructure; it is outside this release.
 

@@ -96,8 +96,8 @@ $('copy-result').addEventListener('click',async()=>{if(!last)return;try{await na
 async function makeCard(result) {
   await document.fonts.ready;
   const c=document.createElement('canvas');c.width=1200;c.height=1500;const ctx=c.getContext('2d');
-  const ink='#20201e',red='#c53c26',muted='#66665e';
-  ctx.fillStyle='#f3f3ef';ctx.fillRect(0,0,1200,1500);
+  const ink='#f1f0e8',red='#f0785c',muted='#a3a59b';
+  ctx.fillStyle='#171815';ctx.fillRect(0,0,1200,1500);
   ctx.fillStyle=ink;ctx.font='700 54px Basteleur';ctx.fillText('stormseed.',76,118);
   ctx.font='28px Apfel';ctx.fillText('Let lightning decide.',76,176);
   if(result.mode==='dice'){
@@ -108,7 +108,7 @@ async function makeCard(result) {
   }
   ctx.strokeStyle=red;ctx.lineWidth=4;ctx.lineCap='round';ctx.lineJoin='round';ctx.beginPath();ctx.moveTo(1010,210);ctx.lineTo(960,300);ctx.lineTo(1010,285);ctx.lineTo(935,400);ctx.stroke();
   ctx.fillStyle=ink;ctx.font='32px Apfel';ctx.fillText(result.mode==='dice'?`One die. You rolled a ${result.displayValue}.`:'A number from 1 to 100.',76,1100);
-  ctx.strokeStyle='#d3d3cb';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(76,1170);ctx.lineTo(1124,1170);ctx.stroke();
+  ctx.strokeStyle='#393b34';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(76,1170);ctx.lineTo(1124,1170);ctx.stroke();
   ctx.fillStyle=muted;ctx.font='23px Apfel';ctx.fillText('Real lightning + browser randomness.',76,1230);
   ctx.fillText(`Snapshot: ${JSON.parse(result.snapshot.material).observedEnd.slice(0,16).replace('T',' ')} UTC`,76,1270);
   ctx.fillText(`Result ${result.outcome.digest.slice(0,12)}`,76,1310);

@@ -1,247 +1,275 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-22T14:04:48.754119+00:00",
+  "generatedAt": "2026-10-22T15:04:17.137618+00:00",
   "title": "Design System: Stormseed",
   "extensions": {
     "colorMeta": {
-      "bg": {
+      "paper": {
         "role": "neutral",
-        "displayName": "Deep night",
+        "displayName": "Night ground",
         "tonalRamp": [
-          "oklch(15.00% 0.02600 234.62)",
-          "oklch(26.43% 0.02600 234.62)",
-          "oklch(37.86% 0.02600 234.62)",
-          "oklch(49.29% 0.02600 234.62)",
-          "oklch(60.71% 0.02600 234.62)",
-          "oklch(72.14% 0.02600 234.62)",
-          "oklch(83.57% 0.02600 234.62)",
-          "oklch(95.00% 0.02600 234.62)"
+          "oklch(15.00% 0.00601 121.96)",
+          "oklch(26.43% 0.00601 121.96)",
+          "oklch(37.86% 0.00601 121.96)",
+          "oklch(49.29% 0.00601 121.96)",
+          "oklch(60.71% 0.00601 121.96)",
+          "oklch(72.14% 0.00601 121.96)",
+          "oklch(83.57% 0.00601 121.96)",
+          "oklch(95.00% 0.00601 121.96)"
         ]
       },
       "ink": {
         "role": "neutral",
-        "displayName": "Cloud white",
+        "displayName": "Warm white",
         "tonalRamp": [
-          "oklch(15.00% 0.01076 158.84)",
-          "oklch(26.43% 0.01076 158.84)",
-          "oklch(37.86% 0.01076 158.84)",
-          "oklch(49.29% 0.01076 158.84)",
-          "oklch(60.71% 0.01076 158.84)",
-          "oklch(72.14% 0.01076 158.84)",
-          "oklch(83.57% 0.01076 158.84)",
-          "oklch(95.00% 0.01076 158.84)"
+          "oklch(15.00% 0.01067 100.83)",
+          "oklch(26.43% 0.01067 100.83)",
+          "oklch(37.86% 0.01067 100.83)",
+          "oklch(49.29% 0.01067 100.83)",
+          "oklch(60.71% 0.01067 100.83)",
+          "oklch(72.14% 0.01067 100.83)",
+          "oklch(83.57% 0.01067 100.83)",
+          "oklch(95.00% 0.01067 100.83)"
         ]
       },
       "muted": {
         "role": "neutral",
-        "displayName": "Cool mist",
+        "displayName": "Sage grey",
         "tonalRamp": [
-          "oklch(15.00% 0.02616 218.87)",
-          "oklch(26.43% 0.02616 218.87)",
-          "oklch(37.86% 0.02616 218.87)",
-          "oklch(49.29% 0.02616 218.87)",
-          "oklch(60.71% 0.02616 218.87)",
-          "oklch(72.14% 0.02616 218.87)",
-          "oklch(83.57% 0.02616 218.87)",
-          "oklch(95.00% 0.02616 218.87)"
+          "oklch(15.00% 0.01438 115.95)",
+          "oklch(26.43% 0.01438 115.95)",
+          "oklch(37.86% 0.01438 115.95)",
+          "oklch(49.29% 0.01438 115.95)",
+          "oklch(60.71% 0.01438 115.95)",
+          "oklch(72.14% 0.01438 115.95)",
+          "oklch(83.57% 0.01438 115.95)",
+          "oklch(95.00% 0.01438 115.95)"
         ]
       },
-      "dim": {
-        "role": "neutral",
-        "displayName": "Distant blue",
+      "red": {
+        "role": "primary",
+        "displayName": "Warm salmon",
         "tonalRamp": [
-          "oklch(15.00% 0.03388 224.43)",
-          "oklch(26.43% 0.03388 224.43)",
-          "oklch(37.86% 0.03388 224.43)",
-          "oklch(49.29% 0.03388 224.43)",
-          "oklch(60.71% 0.03388 224.43)",
-          "oklch(72.14% 0.03388 224.43)",
-          "oklch(83.57% 0.03388 224.43)",
-          "oklch(95.00% 0.03388 224.43)"
+          "oklch(15.00% 0.15407 34.35)",
+          "oklch(26.43% 0.15407 34.35)",
+          "oklch(37.86% 0.15407 34.35)",
+          "oklch(49.29% 0.15407 34.35)",
+          "oklch(60.71% 0.15407 34.35)",
+          "oklch(72.14% 0.15407 34.35)",
+          "oklch(83.57% 0.15407 34.35)",
+          "oklch(95.00% 0.15407 34.35)"
         ]
       },
       "line": {
         "role": "neutral",
-        "displayName": "Storm edge",
+        "displayName": "Charcoal rule",
         "tonalRamp": [
-          "oklch(15.00% 0.03909 226.72)",
-          "oklch(26.43% 0.03909 226.72)",
-          "oklch(37.86% 0.03909 226.72)",
-          "oklch(49.29% 0.03909 226.72)",
-          "oklch(60.71% 0.03909 226.72)",
-          "oklch(72.14% 0.03909 226.72)",
-          "oklch(83.57% 0.03909 226.72)",
-          "oklch(95.00% 0.03909 226.72)"
-        ]
-      },
-      "accent": {
-        "role": "primary",
-        "displayName": "Pale lightning green",
-        "tonalRamp": [
-          "oklch(15.00% 0.05903 127.36)",
-          "oklch(26.43% 0.05903 127.36)",
-          "oklch(37.86% 0.05903 127.36)",
-          "oklch(49.29% 0.05903 127.36)",
-          "oklch(60.71% 0.05903 127.36)",
-          "oklch(72.14% 0.05903 127.36)",
-          "oklch(83.57% 0.05903 127.36)",
-          "oklch(95.00% 0.05903 127.36)"
-        ]
-      },
-      "accent-hover": {
-        "role": "primary",
-        "displayName": "Lit pale green",
-        "tonalRamp": [
-          "oklch(15.00% 0.05194 128.55)",
-          "oklch(26.43% 0.05194 128.55)",
-          "oklch(37.86% 0.05194 128.55)",
-          "oklch(49.29% 0.05194 128.55)",
-          "oklch(60.71% 0.05194 128.55)",
-          "oklch(72.14% 0.05194 128.55)",
-          "oklch(83.57% 0.05194 128.55)",
-          "oklch(95.00% 0.05194 128.55)"
+          "oklch(15.00% 0.01217 120.01)",
+          "oklch(26.43% 0.01217 120.01)",
+          "oklch(37.86% 0.01217 120.01)",
+          "oklch(49.29% 0.01217 120.01)",
+          "oklch(60.71% 0.01217 120.01)",
+          "oklch(72.14% 0.01217 120.01)",
+          "oklch(83.57% 0.01217 120.01)",
+          "oklch(95.00% 0.01217 120.01)"
         ]
       }
     },
     "typographyMeta": {
       "result": {
         "displayName": "Result",
-        "purpose": "Large tabular numerals; long answers and choices use smaller content-sensitive variants."
+        "purpose": "Basteleur output bounded by viewport and result-container dimensions."
       },
-      "mono": {
-        "displayName": "Monospace values",
-        "purpose": "Range inputs; smaller sizes identify source metadata and glyph rendering."
+      "result-three-digits": {
+        "displayName": "Three-digit result",
+        "purpose": "Smaller complete answer for 100; preserves the 44cqw cap."
+      },
+      "brand": {
+        "displayName": "Wordmark",
+        "purpose": "Basteleur branding with a salmon terminal dot."
+      },
+      "headline": {
+        "displayName": "Purpose headline",
+        "purpose": "Compact regular Apfel introduction."
+      },
+      "body": {
+        "displayName": "Explanation body",
+        "purpose": "Readable Apfel prose with a 68ch measure."
+      },
+      "label": {
+        "displayName": "Result caption",
+        "purpose": "Quiet accessible result description."
+      },
+      "action": {
+        "displayName": "Generation action",
+        "purpose": "Large open action label beside the salmon disc."
+      },
+      "metadata": {
+        "displayName": "Provenance metadata",
+        "purpose": "Quiet source and creator information in the colophon."
       }
     },
-    "shadows": [
-      {
-        "name": "result-legibility",
-        "value": "0 3px 32px #06141c",
-        "purpose": "Text shadow softens the animated field behind the answer."
-      }
-    ],
+    "shadows": [],
     "motion": [
       {
-        "name": "control-transition",
-        "value": "200ms",
-        "purpose": "Primary-button background and transform; method-link color."
+        "name": "control-color",
+        "value": "180ms ease",
+        "purpose": "Button and link color feedback."
       },
       {
-        "name": "sky-frame-threshold",
-        "value": "32ms",
-        "purpose": "Approximately 30fps shimmer while visible and motion is allowed."
+        "name": "action-disc-transform",
+        "value": "300ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "Disc rotation and press feedback; background changes over 200ms."
       },
       {
-        "name": "strike-window",
-        "value": "4s",
-        "purpose": "Result-seeded traveling bolt with exponential fade."
+        "name": "result-reveal",
+        "value": "500ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "One horizontal clip reveal after generation."
+      },
+      {
+        "name": "discharge-trace",
+        "value": "600ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "One SVG path trace; visibility ends after 650ms ease-out."
       },
       {
         "name": "reduced-motion",
         "value": "prefers-reduced-motion: reduce",
-        "purpose": "Static sky, no strike, no CSS transitions or smooth scrolling."
+        "purpose": "No animation, transition, discharge or smooth scrolling."
       }
     ],
     "breakpoints": [
       {
         "name": "mobile-layout",
-        "value": "max-width: 700px"
+        "value": "max-width: 760px"
       },
       {
-        "name": "narrow-layout",
-        "value": "max-width: 360px"
+        "name": "short-desktop",
+        "value": "min-width: 761px and max-height: 650px"
       },
       {
-        "name": "compact-height",
-        "value": "min-width: 701px and max-height: 850px"
-      },
-      {
-        "name": "dense-mobile-glyphs",
-        "value": "width < 600px"
+        "name": "wide-desktop",
+        "value": "min-width: 2000px"
       }
     ],
     "responsive": {
-      "picker": "clamp(360px, 29vw, 600px)",
-      "headline": "clamp(40px, 3.5vw, 76px)",
-      "answer": "clamp(128px, min(12vw, 19svh), 224px)",
-      "actionHeight": "clamp(58px, 4.2vw, 76px)",
-      "footer": "In-flow grid row; two rows below 700px."
-    }
+      "stageMaxWidth": "2400px",
+      "desktopColumns": "minmax(0,1.5fr) minmax(280px,1fr)",
+      "controlWidth": "420px maximum; 520px at 2000px and above; 340px on mobile",
+      "resultContainer": "container-type: inline-size; one/two digits capped at 68cqw, three digits at 44cqw",
+      "mobileResult": "min(clamp(230px,68vw,360px),68cqw)",
+      "mobileThreeDigits": "min(clamp(175px,53vw,280px),44cqw)",
+      "shortResult": "min(300px,68cqw)",
+      "shortThreeDigits": "min(235px,44cqw)",
+      "footer": "In-flow colophon; hybrid-source note moves to a second row on mobile."
+    },
+    "assets": {
+      "resultExport": {
+        "size": "1200×1500",
+        "format": "PNG",
+        "source": "Browser canvas using the current result and its snapshot provenance."
+      },
+      "social": {
+        "path": "public/assets/social.png",
+        "size": "1200×630",
+        "provenance": "public/assets/social.provenance.json"
+      },
+      "background": "Flat CSS near-black color; no background image or continuous render loop.",
+      "tonalRamps": "Synthesized display metadata only; shipped colors remain the five frontmatter primitives."
+    },
+    "colorScheme": "dark"
   },
   "components": [
     {
       "name": "Generate button",
       "kind": "button",
-      "refersTo": "button-primary",
-      "description": "A single action key with a pale label area and a dark bolt cell.",
-      "html": "<button class=\"ds-generate\"><span>Generate a number</span><span class=\"ds-strike\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m14 2-9 12h7l-2 8 9-12h-7l2-8Z\"/></svg></span></button>",
-      "css": ".ds-generate{font:500 18px \"Space Grotesk\",sans-serif;display:flex;align-items:stretch;width:100%;max-width:600px;min-height:64px;padding:0;border:1px solid #dcefc5;border-radius:4px;background:#dcefc5;color:#15251d;cursor:pointer}.ds-generate>span:first-child{flex:1;align-self:center;padding:14px 18px}.ds-strike{display:grid;place-items:center;width:64px;background:#18332c;color:#dcefc5}.ds-strike svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.5}.ds-generate:hover{background:#edffda}.ds-generate:active{transform:translateY(2px)}.ds-generate:disabled{opacity:.55;cursor:wait}.ds-generate:focus-visible{outline:2px solid #dcefc5;outline-offset:5px}"
+      "refersTo": "button-generate",
+      "description": "Open action row with an ink rule and a salmon arrow disc.",
+      "html": "<button class=\"ds-generate\"><span>Generate</span><span class=\"ds-action-disc\" aria-hidden=\"true\"><svg viewBox=\"0 0 32 32\"><path d=\"M7 25 25 7M7 7h18v18\"/></svg></span></button>",
+      "css": ".ds-generate{font-family:Apfel,sans-serif;border:0;background:none;padding:0;color:var(--ink,#f1f0e8);cursor:pointer;min-height:44px;transition:color .18s ease;display:flex;gap:24px;align-items:center;justify-content:space-between;width:100%;max-width:420px;min-height:94px;border-top:1px solid var(--ink,#f1f0e8);font-size:clamp(29px,2.4vw,44px);letter-spacing:-.025em;text-align:left}.ds-action-disc{display:grid;place-items:center;flex:none;width:64px;height:64px;border-radius:50%;background:var(--red,#f0785c);color:var(--paper,#171815);transition:transform .3s cubic-bezier(.16,1,.3,1),background .2s}.ds-action-disc svg{width:29px;height:29px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.ds-generate:hover:not(:disabled){color:var(--red,#f0785c)}.ds-generate:hover:not(:disabled) .ds-action-disc{transform:rotate(45deg);background:var(--ink,#f1f0e8)}.ds-generate:active:not(:disabled) .ds-action-disc{transform:scale(.9) rotate(45deg)}.ds-generate:disabled{opacity:.5;cursor:wait}.ds-generate:focus-visible{outline:2px solid var(--red,#f0785c);outline-offset:7px}@media(prefers-reduced-motion:reduce){.ds-generate,.ds-action-disc{transition:none}.ds-generate:hover:not(:disabled) .ds-action-disc{transform:none}}"
     },
     {
-      "name": "Quiet result action",
+      "name": "Result action",
       "kind": "button",
-      "refersTo": "button-quiet",
-      "description": "Lightweight actions displayed after generation.",
-      "html": "<button class=\"ds-quiet\">Copy</button>",
-      "css": ".ds-quiet{font-family:var(--sans,\"Space Grotesk\",sans-serif);padding:4px 2px;background:none;border:0;color:var(--muted,#a4bac1);font-size:14px;min-height:44px;cursor:pointer}.ds-quiet:hover{color:var(--ink,#eaf2ed)}.ds-quiet:disabled{opacity:.55;cursor:wait}.ds-quiet:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
+      "refersTo": "button-result-action",
+      "description": "Quiet underlined action revealed once a result exists.",
+      "html": "<button class=\"ds-result-action\">Save card</button>",
+      "css": ".ds-result-action{font-family:Apfel,sans-serif;border:0;background:none;padding:0;color:var(--ink,#f1f0e8);cursor:pointer;min-height:44px;transition:color .18s ease;font-size:14px;text-decoration:underline;text-decoration-color:var(--line,#393b34);text-underline-offset:4px}.ds-result-action:hover{color:var(--red,#f0785c);text-decoration-color:var(--red,#f0785c)}.ds-result-action:disabled{opacity:.5;cursor:wait}.ds-result-action:focus-visible{outline:2px solid var(--red,#f0785c);outline-offset:7px}@media(prefers-reduced-motion:reduce){.ds-result-action{transition:none}}"
     },
     {
-      "name": "Range field",
-      "kind": "input",
-      "refersTo": "input-number",
-      "description": "A visible label and centered monospace value above a fine rule.",
-      "html": "<label class=\"ds-range\">From <input type=\"number\" value=\"1\" inputmode=\"numeric\"></label>",
-      "css": ".ds-range{font-family:var(--sans,\"Space Grotesk\",sans-serif);display:flex;align-items:center;gap:9px;font-size:14px;color:var(--muted,#a4bac1)}.ds-range input{width:100%;border:0;border-bottom:1px solid #527381;background:transparent;padding:5px 0 6px;font:13px var(--mono,\"IBM Plex Mono\",monospace);color:var(--ink,#eaf2ed);height:52px;appearance:textfield;text-align:right;border-radius:0;caret-color:var(--accent,#dcefc5)}.ds-range input::-webkit-inner-spin-button,.ds-range input::-webkit-outer-spin-button{appearance:none;margin:0}.ds-range input:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
-    },
-    {
-      "name": "Picker modes",
+      "name": "Mode selectors",
       "kind": "nav",
-      "description": "Equal-width segmented modes with a filled selected state and optional icons.",
-      "html": "<div class=\"ds-modes\" role=\"tablist\" aria-label=\"What to pick\"><button role=\"tab\" aria-selected=\"true\">Number</button><button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Coin</button><button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Dice</button><button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Choose</button></div>",
-      "css": ".ds-modes{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:5px;border:1px solid #34505c;border-radius:6px;background:#091b25}.ds-modes button{font:14px \"Space Grotesk\",sans-serif;min-height:44px;padding:8px 6px;border:1px solid transparent;border-radius:3px;color:#a4bac1;background:none;cursor:pointer}.ds-modes button[aria-selected=true]{color:#eaf2ed;background:#243d48;border-color:#527281}.ds-modes button:focus-visible{outline:2px solid #dcefc5;outline-offset:5px}"
+      "refersTo": "mode-selected",
+      "description": "Two text selectors; a salmon dot and ink type mark the active mode.",
+      "html": "<div class=\"ds-modes\" role=\"group\" aria-label=\"What to generate\"><button type=\"button\" aria-pressed=\"true\">1–100</button><button type=\"button\" aria-pressed=\"false\">Dice</button></div>",
+      "css": ".ds-modes{display:flex;gap:32px;align-items:center}.ds-modes button{font-family:Apfel,sans-serif;border:0;background:none;padding:0;color:var(--ink,#f1f0e8);cursor:pointer;min-height:44px;transition:color .18s ease;position:relative;font-size:18px;padding-left:17px;color:var(--muted,#a3a59b)}.ds-modes button:before{content:\"\";position:absolute;left:0;top:50%;width:6px;height:6px;border-radius:50%;background:transparent;transform:translateY(-50%)}.ds-modes button[aria-pressed=true]{color:var(--ink,#f1f0e8)}.ds-modes button[aria-pressed=true]:before,.ds-modes button:hover:before{background:var(--red,#f0785c)}.ds-modes button:hover{color:var(--red,#f0785c)}.ds-modes button:disabled{opacity:.5;cursor:wait}.ds-modes button:focus-visible{outline:2px solid var(--red,#f0785c);outline-offset:7px}@media(prefers-reduced-motion:reduce){.ds-modes button{transition:none}}"
     },
     {
-      "name": "Choice field",
-      "kind": "input",
-      "description": "A compact multiline input with visible guidance and restrained surface.",
-      "html": "<label class=\"ds-choice\"><span>Your choices <small>One per line</small></span><textarea rows=\"3\" placeholder=\"Go for a walk&#10;Make something&#10;Call a friend\"></textarea></label>",
-      "css": ".ds-choice{font-family:var(--sans,\"Space Grotesk\",sans-serif);display:block;width:100%;max-width:600px;color:var(--muted,#a4bac1);font-size:14px}.ds-choice>span{display:flex;justify-content:space-between;margin-bottom:7px}.ds-choice small{font-size:14px;color:var(--dim,#8faab5)}.ds-choice textarea{font-family:var(--sans,\"Space Grotesk\",sans-serif);resize:vertical;box-sizing:border-box;width:100%;min-height:86px;max-height:200px;background:#081a24d9;border:1px solid #34505a;border-radius:5px;padding:9px 12px;color:var(--ink,#eaf2ed);font-size:14px;line-height:1.6;caret-color:var(--accent,#dcefc5)}.ds-choice textarea::placeholder{color:var(--dim,#8faab5)}.ds-choice textarea:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
+      "name": "Explanation opener",
+      "kind": "button",
+      "description": "Unboxed navigation with an expanded-state plus/minus mark.",
+      "html": "<button class=\"ds-method\" type=\"button\" aria-expanded=\"false\"><span>How it works</span><span class=\"ds-plus\" aria-hidden=\"true\"></span></button>",
+      "css": ".ds-method{font-family:Apfel,sans-serif;border:0;background:none;padding:0;color:var(--ink,#f1f0e8);cursor:pointer;min-height:44px;transition:color .18s ease;display:inline-flex;align-items:center;gap:18px;font-size:16px}.ds-plus{position:relative;width:14px;height:14px}.ds-plus:before,.ds-plus:after{content:\"\";position:absolute;top:6px;left:0;width:14px;height:1.5px;background:currentColor}.ds-plus:after{transform:rotate(90deg)}.ds-method[aria-expanded=true] .ds-plus:after{transform:rotate(0)}.ds-method:hover{color:var(--red,#f0785c)}.ds-method:focus-visible{outline:2px solid var(--red,#f0785c);outline-offset:7px}@media(prefers-reduced-motion:reduce){.ds-method{transition:none}}"
+    },
+    {
+      "name": "Number result",
+      "kind": "custom",
+      "description": "Large display type bounded by its own container, with a separate three-digit scale.",
+      "html": "<div class=\"ds-result-area\"><div class=\"ds-result-art\"><div class=\"ds-result ds-three-digits\" aria-hidden=\"true\">100</div></div><p class=\"ds-result-label\" role=\"status\">100 out of 100.</p></div>",
+      "css": ".ds-result-area{container-type:inline-size;min-width:0;width:100%;max-width:800px;text-align:center;color:var(--ink,#f1f0e8)}.ds-result-art{position:relative;display:grid;place-items:center;min-height:360px;height:clamp(360px,49svh,720px)}.ds-result{font-family:Basteleur,serif;font-size:min(clamp(260px,min(33vw,61svh),720px),68cqw);font-weight:700;line-height:1;letter-spacing:-.04em;position:relative;transform:translateY(-.035em);white-space:nowrap}.ds-result.ds-three-digits{font-size:min(clamp(220px,min(26vw,51svh),570px),44cqw)}.ds-result-label{font:16px/1.5 Apfel,sans-serif;color:var(--muted,#a3a59b);margin:24px 0 0}@media(max-width:760px){.ds-result-art{height:clamp(230px,34svh,360px);min-height:230px}.ds-result{font-size:min(clamp(230px,68vw,360px),68cqw)}.ds-result.ds-three-digits{font-size:min(clamp(175px,53vw,280px),44cqw)}.ds-result-label{font-size:14px;margin-top:8px}}@media(min-width:761px) and (max-height:650px){.ds-result-art{height:260px;min-height:260px}.ds-result{font-size:min(300px,68cqw)}.ds-result.ds-three-digits{font-size:min(235px,44cqw)}.ds-result-label{margin-top:5px}}"
+    },
+    {
+      "name": "Die result",
+      "kind": "custom",
+      "description": "A rotated ink outline and circular pips share the result stage.",
+      "html": "<div class=\"ds-die-result\"><svg class=\"ds-die\" viewBox=\"0 0 300 300\" aria-hidden=\"true\"><rect x=\"9\" y=\"9\" width=\"282\" height=\"282\" rx=\"40\"/><circle cx=\"75\" cy=\"75\" r=\"23\"/><circle cx=\"225\" cy=\"75\" r=\"23\"/><circle cx=\"150\" cy=\"150\" r=\"23\"/><circle cx=\"75\" cy=\"225\" r=\"23\"/><circle cx=\"225\" cy=\"225\" r=\"23\"/></svg><p role=\"status\">You rolled a 5.</p></div>",
+      "css": ".ds-die-result{text-align:center;color:var(--ink,#f1f0e8)}.ds-die{display:block;margin:24px auto;width:clamp(220px,min(23vw,36svh),480px);max-width:80%;height:auto;transform:rotate(-8deg)}.ds-die rect{fill:none;stroke:var(--ink,#f1f0e8);stroke-width:3}.ds-die circle{fill:var(--ink,#f1f0e8)}.ds-die-result p{font:16px/1.5 Apfel,sans-serif;color:var(--muted,#a3a59b);margin:24px 0 0}@media(max-width:760px),(min-width:761px) and (max-height:650px){.ds-die{width:200px}}"
     },
     {
       "name": "Method disclosure",
       "kind": "custom",
-      "description": "Native expandable information with thin separators and a plus/minus marker.",
+      "description": "Native expandable explanation with a fine rule and familiar marker.",
       "html": "<details class=\"ds-disclosure\"><summary>Is this live? Does it cover the whole planet?</summary><p>It is a recent snapshot, not a live stream. The observed age is always shown.</p></details>",
-      "css": ".ds-disclosure{font-family:var(--sans,\"Space Grotesk\",sans-serif);max-width:590px;color:var(--ink,#eaf2ed);border-top:1px solid var(--line,#34505c);padding:16px 0}.ds-disclosure summary{cursor:pointer;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:15px;align-items:center}.ds-disclosure summary::-webkit-details-marker{display:none}.ds-disclosure summary:after{content:\"+\";font-size:20px;color:var(--dim,#8faab5)}.ds-disclosure[open] summary:after{content:\"\u2212\"}.ds-disclosure p{color:#b3c6cd;font-size:16px;line-height:1.8}.ds-disclosure summary:focus-visible{outline:2px solid var(--accent,#dcefc5);outline-offset:5px}"
+      "css": ".ds-disclosure{font:18px/1.5 Apfel,sans-serif;max-width:68ch;color:var(--ink,#f1f0e8);border-top:1px solid var(--line,#393b34);padding:10px 0}.ds-disclosure summary{cursor:pointer;display:list-item;padding:12px 0;line-height:1.4;min-height:44px}.ds-disclosure p{color:var(--muted,#a3a59b);margin:14px 0 20px}.ds-disclosure summary:focus-visible{outline:2px solid var(--red,#f0785c);outline-offset:7px}"
     }
   ],
   "narrative": {
-    "northStar": "A living ASCII sky",
-    "overview": "A dark, atmospheric field of real rendered glyphs surrounds a clean, responsive instrument. The sky supplies the expression; restrained controls keep the decision easy. These rules capture the finished implementation in `public/index.html`, `public/style.css`, and `public/live-sky.js`, following the user-directed revisions in `.impeccable/review/contract.md`.",
+    "northStar": "A chance print",
+    "overview": "A chance print. The answer is the artwork: expressive Basteleur numerals or a spare outlined die on a flat, nearly black ground. Apfel brings a quiet, direct voice to the controls and explanation. Warm salmon marks the action and a brief discharge; it never becomes a background atmosphere.\n\nThis system uses scale, asymmetry, generous space and a few fine rules. It has no enclosing tool card, generated background or continuous rendering loop. The implemented reference is public/index.html, public/style.css and public/app.js; the generator composition belongs to its surface brief.",
     "keyCharacteristics": [
-      "A full-screen, continuously shimmering ASCII scene.",
-      "A centered tool with no homepage header or enclosing card.",
-      "A bright branching bolt after each successful generation.",
-      "Small peripheral links and progressively disclosed explanation."
+      "Nearly black ground, warm white type and restrained salmon.",
+      "Self-hosted Basteleur Bold and Apfel Grotezk Regular.",
+      "An oversized, fully contained answer with quiet controls.",
+      "One brief, result-triggered motion sequence."
     ],
     "rules": [
       {
-        "name": "The Readable Center Rule",
-        "body": "Keep the center of the sky subdued so the instrument remains legible without an enclosing panel.",
+        "name": "The Single Accent Rule",
+        "body": "Use salmon for action, selected indicators, focus, errors, stale-data status and the brief discharge. Keep the reading ground neutral.",
         "section": "colors"
+      },
+      {
+        "name": "The Contained Answer Rule",
+        "body": "The complete answer must fit its own column. Preserve the 68cqw cap for one or two digits and the 44cqw cap for three digits in every layout.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Ground Rule",
+        "body": "Separate content through space, scale and fine rules; do not add elevation to the generator.",
+        "section": "elevation"
       }
     ],
     "dos": [
-      "**Do** preserve the calm reading area inside the full-screen ASCII atmosphere.",
-      "**Do** keep generation dominant and peripheral links quiet.",
-      "**Do** adapt result typography to long numbers and multiline choices.",
-      "**Do** preserve the static, flash-free reduced-motion experience.",
-      "**Do** show actual source age and keep source metadata tied to the displayed result."
+      "**Do** make the answer the strongest visual element and keep every digit inside its result container.",
+      "**Do** use the self-hosted typefaces and preserve the quiet, open control treatment.",
+      "**Do** adapt wide, narrow and short screens with real layout changes.",
+      "**Do** retain visible focus, live status, loading, error and reduced-motion states.",
+      "**Do** tie source age and exported provenance to the displayed result."
     ],
     "donts": [
-      "**Don't** restore a homepage header, split illustration layout, or enclosing tool card.",
-      "**Don't** replace rendered ASCII with a stock image or static decorative screenshot.",
-      "**Don't** imply that the artistic bolt depicts an exact measured flash or that cached observations are a live stream."
+      "**Don't** restore the discarded dark ASCII atmosphere, generated wallpaper or continuous visual animation.",
+      "**Don't** add cards, shadows, gradients or decorative fields around the generator.",
+      "**Don't** size the result from viewport width alone or clip the three-digit answer.",
+      "**Don't** present the salmon discharge as an observed lightning path or a recent snapshot as a live stream."
     ]
   }
 }
